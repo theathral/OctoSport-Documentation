@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Team Form and Actions (TBD) &#8212; Octosport Documentation</title>
+    <title>Team Form and Actions &#8212; Octosport Documentation</title>
   
   
   
@@ -209,7 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="player_form.html">Player Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="employee_form.html">Staff Form and Actions (TBD)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Team Form and Actions (TBD)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Team Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="event_form.html">Event Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="result_form.html">Result Form and Actions (TBD)</a></li>
@@ -360,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Team Form and Actions (TBD)</h1>
+    <h1>Team Form and Actions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,11 +370,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide">Step-by-Step Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results">Expected Results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">Additional Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-actions">Players Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-actions">Injuries Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-actions">Staff Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-and-performance-actions">Schedule and Performance Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-actions">Feedback Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-actions">Achievements Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-actions">Contracts Actions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
         </div>
@@ -386,43 +396,216 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="team-form-and-actions-tbd">
-<h1>Team Form and Actions (TBD)<a class="headerlink" href="#team-form-and-actions-tbd" title="Link to this heading">#</a></h1>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
-<p>Describe the purpose of the form and how users interact with it.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="team-form-and-actions">
+<h1>Team Form and Actions<a class="headerlink" href="#team-form-and-actions" title="Link to this heading">#</a></h1>
+<p>The Team form is used for creating, updating, and managing teams within the system. Users can interact with the form to enter or modify team details, including name, status, sport, and key personnel such as coaches and captains. The form also includes functions for managing the team’s logo and related data.</p>
+<section id="navigation-tbd">
+<h2>Navigation (TBD)<a class="headerlink" href="#navigation-tbd" title="Link to this heading">#</a></h2>
+<p>Steps to locate this page:</p>
+<ul class="simple">
+<li><p>Navigate to the <strong>Teams</strong> section in the main menu.</p></li>
+<li><p>Select the <strong>Team Form</strong> option from the available list.</p></li>
+</ul>
 </section>
 <section id="fields-functions">
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Field Name 1</strong>: Description of what this field does.</p></li>
-<li><p><strong>Field Name 2</strong>: Description of another field.</p></li>
-<li><p>…</p></li>
+<li><p><strong>Id</strong> (read-only): A unique identifier for each team.</p></li>
+<li><p><strong>Name</strong>: The official name of the team.</p></li>
+<li><p><strong>Description</strong>: A brief description of the team, explaining what the team is about or its goals.</p></li>
+<li><p><strong>Status</strong>: A dropdown menu where you can choose the current status of the team. Options include:</p>
+<ul>
+<li><p>Pending</p></li>
+<li><p>Active</p></li>
+<li><p>Archived</p></li>
+<li><p>Inactive</p></li>
+</ul>
+</li>
+<li><p><strong>Sport</strong>: Select the sport that the team participates in. This is linked to a list of available sports.</p></li>
+<li><p><strong>Coach</strong>: Select the coach for the team. Only users with the role of <strong>coach</strong> will appear here.</p></li>
+<li><p><strong>Captain</strong>: Select the captain of the team. This will link to the list of players.</p></li>
+<li><p><strong>Logo</strong>: Upload an image that represents the team, such as the team’s official logo.</p></li>
 </ul>
 </section>
-<section id="step-by-step-guide">
-<h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Navigate to the form.</p></li>
-<li><p>Fill in the required fields.</p></li>
-<li><p>Click the submit button.</p></li>
-<li><p>Verify confirmation message.</p></li>
-</ol>
-</section>
-<section id="expected-results">
-<h2>Expected Results<a class="headerlink" href="#expected-results" title="Link to this heading">#</a></h2>
+<section id="related-lists">
+<h2>Related Lists<a class="headerlink" href="#related-lists" title="Link to this heading">#</a></h2>
+<p>Tabs that point to other sections related to the team:</p>
 <ul class="simple">
-<li><p>Successful submission of data.</p></li>
-<li><p>Confirmation message displayed.</p></li>
-<li><p>Data stored and available for retrieval.</p></li>
+<li><p><strong>Players</strong>: View and manage the players on the team.</p></li>
+<li><p><strong>Injuries</strong>: View injuries related to players on the team.</p></li>
+<li><p><strong>Staff</strong>: View and manage the staff members assigned to the team.</p></li>
+<li><p><strong>Schedule</strong>: View and manage the team’s schedule, including upcoming events and matches.</p></li>
+<li><p><strong>Feedback</strong>: View feedback related to the team’s performance.</p></li>
+<li><p><strong>Achievements</strong>: View any awards or achievements the team has earned.</p></li>
+<li><p><strong>Contracts</strong>: View contracts associated to the team.</p></li>
+<li><p><strong>Sponsors</strong>: View information about sponsors supporting the team.</p></li>
 </ul>
 </section>
-<section id="additional-notes">
-<h2>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading">#</a></h2>
+<section id="actions-required-roles">
+<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Explanation of Roles</p>
+<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
+</div>
+<section id="main-actions">
+<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Validation rules (e.g., required fields, character limits).</p></li>
-<li><p>Dependencies with other modules.</p></li>
+<li><p><strong>View Team</strong>: Allows you to view the team’s details.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong> role or higher.</p></li>
 </ul>
+</li>
+<li><p><strong>Save Team (New Record)</strong>: Saves the team details when creating a new team.</p>
+<ul>
+<li><p>Requires <strong>team</strong> role or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Save Team (Existing Record)</strong>: Saves any changes made to an existing team.</p>
+<ul>
+<li><p>Requires <strong>team</strong> role or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Team</strong>: Allows you to delete a team.</p>
+<ul>
+<li><p><strong>Attention</strong>: This action will remove all associated data, such as players, staff, and schedules.</p></li>
+<li><p>Requires <strong>team_admin</strong> role or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="players-actions">
+<h3>Players Actions<a class="headerlink" href="#players-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Players</strong>: Allows you to view the list of players associated with the team.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>player_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Add Player to Team</strong>: Lets you add a new player to the team. You can search for players and select those not already in the team. This action will open a pop-up window to add a player.</p>
+<ul>
+<li><p>Requires <strong>team</strong>, <strong>player_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Remove Player from Team</strong>: Lets you remove a player from the team. This action is available inline next to each player in the team.</p>
+<ul>
+<li><p>Requires <strong>team</strong>, <strong>player_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="injuries-actions">
+<h3>Injuries Actions<a class="headerlink" href="#injuries-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Injuries</strong>: Allows you to view injury details for players on the team. This is indirectly available through the Players section.</p>
+<ul>
+<li><p>Requires <strong>player_read</strong> role or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="staff-actions">
+<h3>Staff Actions<a class="headerlink" href="#staff-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Staff</strong>: Allows you to see the list of staff members assigned to the team.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>employee_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Add Staff to Team</strong>: Lets you add a new staff member to the team. You can search for staff and select those not already part of the team. This action will open a pop-up window to add staff.</p>
+<ul>
+<li><p>Requires <strong>team</strong>, <strong>employee_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Remove Staff from Team</strong>: Lets you remove a staff member from the team. This action is available inline next to each staff member in the team.</p>
+<ul>
+<li><p>Requires <strong>team</strong>, <strong>employee_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="schedule-and-performance-actions">
+<h3>Schedule and Performance Actions<a class="headerlink" href="#schedule-and-performance-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Schedule</strong>: Allows you to view the team’s schedule and events.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>event_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Add Team to Schedule</strong>: Lets you schedule the team for an upcoming event or match. This option will open a pop-up window, allowing you to select the event.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>event</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Remove Team from Schedule</strong>: Lets you remove the team from an event or match. This option is available inline next to each scheduled event.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>event</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="feedback-actions">
+<h3>Feedback Actions<a class="headerlink" href="#feedback-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Feedback</strong>: Allows you to view feedback given for the team’s performance.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Give Feedback</strong>: Lets you provide feedback for the team’s performance in a specific event. This opens a new window where feedback can be added.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Feedback</strong>: Lets you remove feedback for the team. This option is available inline next to existing feedback.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="achievements-actions">
+<h3>Achievements Actions<a class="headerlink" href="#achievements-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Achievements</strong>: Allows you to see the team’s achievements and awards.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Add Achievement</strong>: Lets you add a new achievement for the team. This opens a new window where you can select the achievement and the team.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Achievement</strong>: Lets you remove an achievement from the team’s record. This option is available inline next to each achievement.</p>
+<ul>
+<li><p>Requires <strong>team_read</strong>, <strong>performance</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="contracts-actions">
+<h3>Contracts Actions<a class="headerlink" href="#contracts-actions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Contract and Payment</strong>: Allows you to view the team’s contract and payment details.</p>
+<ul>
+<li><p>Requires <strong>user_read_basic</strong>, <strong>team_read</strong>, <strong>financial_read</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Create Contract for Team</strong>: Lets you create a new contract for the team. This option opens a new window where you can enter the contract details.</p>
+<ul>
+<li><p>Requires <strong>user_read_basic</strong>, <strong>team_read</strong>, <strong>financial</strong> roles or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Contract</strong>: Lets you delete an existing contract for the team. This option is available inline next to the contract details.</p>
+<ul>
+<li><p>Requires <strong>user_read_basic</strong>, <strong>team_read</strong>, <strong>financial_admin</strong> roles or higher.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="other-important-information">
+<h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -490,11 +673,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide">Step-by-Step Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results">Expected Results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">Additional Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-actions">Players Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-actions">Injuries Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-actions">Staff Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-and-performance-actions">Schedule and Performance Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-actions">Feedback Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-actions">Achievements Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-actions">Contracts Actions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>
 

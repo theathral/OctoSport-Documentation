@@ -209,7 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="player_form.html">Player Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="employee_form.html">Staff Form and Actions (TBD)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions (TBD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="event_form.html">Event Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="result_form.html">Result Form and Actions (TBD)</a></li>
@@ -375,6 +375,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide">Step-by-Step Guide</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results">Expected Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">Additional Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-roles">System Roles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-specific-roles">Section-Specific Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-roles">Specific roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-wide-admin-roles">System-Wide Admin Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-hierarchy-summary">Role Hierarchy Summary</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -423,6 +430,48 @@ document.write(`
 <li><p>Validation rules (e.g., required fields, character limits).</p></li>
 <li><p>Dependencies with other modules.</p></li>
 </ul>
+</section>
+<section id="system-roles">
+<span id="id1"></span><h2>System Roles<a class="headerlink" href="#system-roles" title="Link to this heading">#</a></h2>
+<p>(to be reviewed)</p>
+<section id="section-specific-roles">
+<h3>Section-Specific Roles<a class="headerlink" href="#section-specific-roles" title="Link to this heading">#</a></h3>
+<p>For each section in the system (e.g., Team, Player, etc.), we have three levels of roles:</p>
+<ul class="simple">
+<li><p><strong>{section}_admin</strong>: This role has the highest level of access for the section. Users with this role can <strong>view</strong>, <strong>modify</strong>, and <strong>delete</strong> records in the section. They have full administrative rights within the section.</p></li>
+<li><p><strong>{section}</strong>: Users with this role can <strong>view</strong> and <strong>modify</strong> records within the section but cannot <strong>delete</strong> them. This role is intended for users who need to manage and update records but don’t have full administrative control.</p></li>
+<li><p><strong>{section}_read</strong>: This role is the most restrictive. Users can only <strong>view</strong> records within the section. They cannot make any changes to the data and have a read-only view of the section’s content.</p></li>
+</ul>
+<p><strong>Hierarchy Overview for Section-Specific Roles</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{section}_admin</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">{section}</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">{section}_read</span></code></p></li>
+<li><p>A higher role inherits all the permissions of the lower roles. For example, a user with the <code class="docutils literal notranslate"><span class="pre">{section}_admin</span></code> role can perform all actions available to users with the <code class="docutils literal notranslate"><span class="pre">{section}</span></code> and <code class="docutils literal notranslate"><span class="pre">{section}_read</span></code> roles.</p></li>
+</ul>
+</section>
+<section id="specific-roles">
+<h3>Specific roles<a class="headerlink" href="#specific-roles" title="Link to this heading">#</a></h3>
+</section>
+<section id="system-wide-admin-roles">
+<h3>System-Wide Admin Roles<a class="headerlink" href="#system-wide-admin-roles" title="Link to this heading">#</a></h3>
+<p>In addition to section-specific roles, there are two <strong>admin roles</strong> that have system-wide access:</p>
+<ul class="simple">
+<li><p><strong>admin</strong>: This role has the highest level of access across the entire system. Users with the <code class="docutils literal notranslate"><span class="pre">admin</span></code> role can <strong>view</strong>, <strong>modify</strong>, and <strong>delete</strong> any records in the system, regardless of the section. Admins have full control over all areas of the system.</p></li>
+<li><p><strong>admin_read</strong>: This role provides <strong>view-only access</strong> to everything in the system. Users with this role can see all records across sections but cannot make any modifications or deletions. Admin_read users can monitor and review the system but have no write permissions.</p></li>
+</ul>
+<p><strong>Hierarchy Overview for Admin Roles</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">admin</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">admin_read</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">admin</span></code> role includes all the permissions of the <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> role, so admins can perform any action, while admin_read users can only view records without altering them.</p></li>
+</ul>
+</section>
+<section id="role-hierarchy-summary">
+<h3>Role Hierarchy Summary<a class="headerlink" href="#role-hierarchy-summary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Section Roles</strong>: <code class="docutils literal notranslate"><span class="pre">{section}_admin</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">{section}</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">{section}_read</span></code></p></li>
+<li><p><strong>System Admin Roles</strong>: <code class="docutils literal notranslate"><span class="pre">admin</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">admin_read</span></code></p></li>
+<li><p>A higher role in both section-specific and system-wide roles automatically inherits the permissions of lower roles.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -495,6 +544,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide">Step-by-Step Guide</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results">Expected Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">Additional Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-roles">System Roles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-specific-roles">Section-Specific Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-roles">Specific roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-wide-admin-roles">System-Wide Admin Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-hierarchy-summary">Role Hierarchy Summary</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
