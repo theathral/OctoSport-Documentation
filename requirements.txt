@@ -1,0 +1,6 @@
+jupyter-book
+myst_nb
+sphinx-design
+sphinx-togglebutton
+pygments
+ghp-import
