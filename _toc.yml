@@ -24,16 +24,16 @@ chapters:
   - file: content/forms_and_actions/forms_and_actions_overview
     sections:
 #      - file: content/forms_and_actions/sport_form
-      - file: content/forms_and_actions/group_form
-      - file: content/forms_and_actions/role_form
+      - file: content/forms_and_actions/group_form # Done
+      - file: content/forms_and_actions/role_form # Done
 #      - file: content/forms_and_actions/user_form
 
 #      - file: content/forms_and_actions/player_form
-      - file: content/forms_and_actions/injury_form
+      - file: content/forms_and_actions/injury_form # Done
 
 #      - file: content/forms_and_actions/employee_form
 
-      - file: content/forms_and_actions/team_form
+      - file: content/forms_and_actions/team_form # Done
 
 #      - file: content/forms_and_actions/schedule_form
 #      - file: content/forms_and_actions/event_form

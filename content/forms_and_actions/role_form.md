@@ -10,10 +10,7 @@ The best practice is to assign Roles to Groups rather than directly to Users, an
 
 ## Navigation (TBD)
 
-```{admonition} Under Construction
-:class: warning, dropdown
-
-This section is under construction!
+```{warning} Under Construction
 ```
 
 Steps to locate this page:
@@ -24,16 +21,22 @@ Steps to locate this page:
 ## Fields & Functions
 
 - **Id** (read-only): A unique identifier for each role.
-- **Name**: The official name of the role.
+- **Name** (required): The official name of the role.
 - **Description**: A brief description of the role.
 - **Active**: Checkbox indicating whether the role is currently active.
+
+[IMAGE]
 
 ## Related Lists
 
 Tabs that point to other sections related to the role:
 
 - **[Users](./user_form.md)**: View and manage users assigned to the role.
+  [IMAGE]
+
 - **[Groups](./group_form.md)**: View and manage groups associated with the role.
+  [IMAGE]
+
 
 ## Actions & Required Roles
 
@@ -46,29 +49,29 @@ Please refer to the [Role Hierarchy section](system-roles) for details about rol
 ### Main Actions
 
 - **View Role**: Allows you to view the role's details.
-    - Requires **admin_read** or **admin** role.
+    - Requires `admin_read` or `admin` role.
 
 ### Users Actions
 
 - **View Users**: Allows you to view the list of users associated with the role.
-    - Requires **admin_read** or **admin** role.
+    - Requires `admin_read` or `admin` role.
 - **Add User to Role**: Lets you assign a user to the role. This action will open a pop-up window to add a user.
-    - Requires **admin** role.
     - **How**: This action will open a pop-up window to add a user.
+    - Requires `admin` role.
 - **Remove User from Role**: Lets you remove a user from the role. This action is available inline next to each user.
-    - **How**: This action is available inline next to each user.
-    - Requires **admin** role.
+    - **How**: This action is available inline next to each record.
+    - Requires `admin` role.
 
 ### Groups Actions
 
 - **View Groups**: Allows you to view the list of groups associated with the role.
-    - Requires **admin_read** or **admin** role.
+    - Requires `admin_read` or `admin` role.
 - **Add Role to Group**: Lets you assign the role to a group. This action will open a pop-up window to add a role.
-    - Requires **admin** role.
+    - Requires `admin` role.
     - **How**: This action will open a pop-up window to add a group.
 - **Remove Role from Group**: Lets you remove a role from a group. This action is available inline next to each group.
-    - **How**: This action is available inline next to each group.
-    - Requires **admin** role.
+    - **How**: This action is available inline next to each record.
+    - Requires `admin` role.
 
 (system-roles)=
 
@@ -99,9 +102,9 @@ Special roles are used for specific purposes or unique conditions within the sys
 
 In addition to section-specific and special roles, there are two **admin roles** that have system-wide access:
 
-- **admin**:  This role has full access across the entire system. Users with this role can **view**, **modify**, and **delete** any records, regardless of the section. Admins have unrestricted control over all areas of the platform.
+- `admin`:  This role has full access across the entire system. Users with this role can **view**, **modify**, and **delete** any records, regardless of the section. Admins have unrestricted control over all areas of the platform.
 
-- **admin_read**: This role grants **view-only** access across the entire system. Users with this role can see all records in the system but cannot make any modifications or deletions. They can monitor the system but have no write permissions.
+- `admin_read`: This role grants **view-only** access across the entire system. Users with this role can see all records in the system but cannot make any modifications or deletions. They can monitor the system but have no write permissions.
 
 **Hierarchy Overview for Admin Roles**:
 
