@@ -380,9 +380,9 @@ document.write(`
 </div>
 <section id="navigation-tbd">
 <h2>Navigation (TBD)<a class="headerlink" href="#navigation-tbd" title="Link to this heading">#</a></h2>
-<div class="warning dropdown admonition">
-<p class="admonition-title">Under Construction</p>
-<p>This section is under construction!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under Construction</p>
 </div>
 <p>Steps to locate this page:</p>
 <ul class="simple">
@@ -394,17 +394,20 @@ document.write(`
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each role.</p></li>
-<li><p><strong>Name</strong>: The official name of the role.</p></li>
+<li><p><strong>Name</strong> (required): The official name of the role.</p></li>
 <li><p><strong>Description</strong>: A brief description of the role.</p></li>
 <li><p><strong>Active</strong>: Checkbox indicating whether the role is currently active.</p></li>
 </ul>
+<p>[IMAGE]</p>
 </section>
 <section id="related-lists">
 <h2>Related Lists<a class="headerlink" href="#related-lists" title="Link to this heading">#</a></h2>
 <p>Tabs that point to other sections related to the role:</p>
 <ul class="simple">
-<li><p><strong><span class="xref myst">Users</span></strong>: View and manage users assigned to the role.</p></li>
-<li><p><strong><a class="reference internal" href="group_form.html"><span class="std std-doc">Groups</span></a></strong>: View and manage groups associated with the role.</p></li>
+<li><p><strong><span class="xref myst">Users</span></strong>: View and manage users assigned to the role.
+[IMAGE]</p></li>
+<li><p><strong><a class="reference internal" href="group_form.html"><span class="std std-doc">Groups</span></a></strong>: View and manage groups associated with the role.
+[IMAGE]</p></li>
 </ul>
 </section>
 <section id="actions-required-roles">
@@ -418,7 +421,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Role</strong>: Allows you to view the role’s details.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>
@@ -428,19 +431,19 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Users</strong>: Allows you to view the list of users associated with the role.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Add User to Role</strong>: Lets you assign a user to the role. This action will open a pop-up window to add a user.</p>
 <ul>
-<li><p>Requires <strong>admin</strong> role.</p></li>
 <li><p><strong>How</strong>: This action will open a pop-up window to add a user.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Remove User from Role</strong>: Lets you remove a user from the role. This action is available inline next to each user.</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each user.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>
@@ -450,19 +453,19 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Groups</strong>: Allows you to view the list of groups associated with the role.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Add Role to Group</strong>: Lets you assign the role to a group. This action will open a pop-up window to add a role.</p>
 <ul>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 <li><p><strong>How</strong>: This action will open a pop-up window to add a group.</p></li>
 </ul>
 </li>
 <li><p><strong>Remove Role from Group</strong>: Lets you remove a role from a group. This action is available inline next to each group.</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each group.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>
@@ -493,8 +496,8 @@ document.write(`
 <h3>System-Wide Admin Roles<a class="headerlink" href="#system-wide-admin-roles" title="Link to this heading">#</a></h3>
 <p>In addition to section-specific and special roles, there are two <strong>admin roles</strong> that have system-wide access:</p>
 <ul class="simple">
-<li><p><strong>admin</strong>:  This role has full access across the entire system. Users with this role can <strong>view</strong>, <strong>modify</strong>, and <strong>delete</strong> any records, regardless of the section. Admins have unrestricted control over all areas of the platform.</p></li>
-<li><p><strong>admin_read</strong>: This role grants <strong>view-only</strong> access across the entire system. Users with this role can see all records in the system but cannot make any modifications or deletions. They can monitor the system but have no write permissions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admin</span></code>:  This role has full access across the entire system. Users with this role can <strong>view</strong>, <strong>modify</strong>, and <strong>delete</strong> any records, regardless of the section. Admins have unrestricted control over all areas of the platform.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admin_read</span></code>: This role grants <strong>view-only</strong> access across the entire system. Users with this role can see all records in the system but cannot make any modifications or deletions. They can monitor the system but have no write permissions.</p></li>
 </ul>
 <p><strong>Hierarchy Overview for Admin Roles</strong>:</p>
 <ul class="simple">

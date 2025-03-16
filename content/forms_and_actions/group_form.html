@@ -372,9 +372,9 @@ document.write(`
 </div>
 <section id="navigation-tbd">
 <h2>Navigation (TBD)<a class="headerlink" href="#navigation-tbd" title="Link to this heading">#</a></h2>
-<div class="warning dropdown admonition">
-<p class="admonition-title">Under Construction</p>
-<p>This section is under construction!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under Construction</p>
 </div>
 <p>Steps to locate this page:</p>
 <ul class="simple">
@@ -386,17 +386,20 @@ document.write(`
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each group.</p></li>
-<li><p><strong>Name</strong>: The official name of the group.</p></li>
+<li><p><strong>Name</strong> (required): The official name of the group.</p></li>
 <li><p><strong>Description</strong>: A brief description of the group.</p></li>
 <li><p><strong>Active</strong>: Checkbox indicating whether the group is currently active.</p></li>
 </ul>
+<p>[IMAGE]</p>
 </section>
 <section id="related-lists">
 <h2>Related Lists<a class="headerlink" href="#related-lists" title="Link to this heading">#</a></h2>
 <p>Tabs that point to other sections related to the group:</p>
 <ul class="simple">
-<li><p><strong><span class="xref myst">Users</span></strong>: View and manage users assigned to the group.</p></li>
-<li><p><strong><a class="reference internal" href="role_form.html"><span class="std std-doc">Roles</span></a></strong>: View and manage roles associated with the group.</p></li>
+<li><p><strong><span class="xref myst">Users</span></strong>: View and manage users assigned to the group.
+[IMAGE]</p></li>
+<li><p><strong><a class="reference internal" href="role_form.html"><span class="std std-doc">Roles</span></a></strong>: View and manage roles associated with the group.
+[IMAGE]</p></li>
 </ul>
 </section>
 <section id="actions-required-roles">
@@ -410,22 +413,22 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Group</strong>: Allows you to view the group’s details.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Group (New Record)</strong>: Allows you to create a new group.</p>
+<li><p><strong>Save Group (New Record)</strong>: Allows you to create a new group record.</p>
 <ul>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Group (Existing Record)</strong>: Allows you to modify the details of an existing group.</p>
+<li><p><strong>Save Group (Existing Record)</strong>: Allows you to modify the details of an existing group record.</p>
 <ul>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Delete Group</strong>: Allows you to delete a group.</p>
 <ul>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>
@@ -435,19 +438,19 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Users</strong>: Allows you to view the list of users associated with the group.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Add User to Group</strong>: Allows you to add a new user to the group.</p>
 <ul>
 <li><p><strong>How</strong>: This action will open a pop-up window to add a user.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Remove User from Group</strong>: Allows you to remove a user from the group.</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each user.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>
@@ -457,19 +460,19 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Roles</strong>: Allows you to see the list of roles assigned to the group.</p>
 <ul>
-<li><p>Requires <strong>admin_read</strong> or <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Add Role to Group</strong>: Allows you to add a new role to the group.</p>
 <ul>
 <li><p><strong>How</strong>: This action will open a pop-up window to add a role.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 <li><p><strong>Remove Role from Group</strong>: Allows you to remove a role from the group.</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each role.</p></li>
-<li><p>Requires <strong>admin</strong> role.</p></li>
+<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
 </ul>
 </li>
 </ul>

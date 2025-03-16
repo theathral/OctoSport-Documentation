@@ -344,6 +344,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#injury-record-lifecycle">Injury Record Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
 </ul>
@@ -365,6 +366,10 @@ document.write(`
 <p>The Injury form is used for recording, updating, and managing injuries associated with players. Users can interact with the form to enter or modify injury details, including status, assigned doctor, and rehabilitation timelines.</p>
 <section id="navigation-tbd">
 <h2>Navigation (TBD)<a class="headerlink" href="#navigation-tbd" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under Construction</p>
+</div>
 <p>Steps to locate this page:</p>
 <ul class="simple">
 <li><p>Navigate to the <strong>Injuries</strong> section in the main menu.</p></li>
@@ -375,22 +380,38 @@ document.write(`
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each injury record.</p></li>
-<li><p><strong>Name</strong>: The name or title of the injury record.</p></li>
+<li><p><strong>Name</strong> (required): The name or title of the injury record.</p></li>
 <li><p><strong>Comments</strong>: Additional notes related to the injury.</p></li>
-<li><p><strong>Status</strong>: A dropdown menu to select the current recovery status of the injury. Options include:</p>
-<ul>
-<li><p>In Recovery</p></li>
-<li><p>Setback in Recovery</p></li>
-<li><p>Fully Recovered</p></li>
-<li><p>Permanent Disability</p></li>
-<li><p>Cancelled</p></li>
-</ul>
-</li>
-<li><p><strong>Player</strong>: Reference field linking the injury to a specific player.</p></li>
-<li><p><strong>Doctor</strong>: Reference field linking to a doctor (filtered to users with the doctor role).</p></li>
+<li><p><strong>Status</strong> (required): A dropdown menu to select the current recovery status of the injury. More at: <a class="reference internal" href="#injury-record-lifecycle"><span class="xref myst">Injury Record Lifecycle</span></a>.</p></li>
+<li><p><strong>Player</strong>: Reference field linking the player having the injury.</p></li>
+<li><p><strong>Doctor</strong>: Reference field linking to a doctor overlooking the injury (filtered to users with the doctor role).</p></li>
 <li><p><strong>Injury Date</strong>: The date when the injury occurred.</p></li>
 <li><p><strong>Estimated Rehabilitation Date</strong>: The expected recovery completion date.</p></li>
 <li><p><strong>Actual Rehabilitation Date</strong>: The actual date when the player recovered.</p></li>
+</ul>
+<p>[IMAGE]</p>
+</section>
+<section id="injury-record-lifecycle">
+<h2>Injury Record Lifecycle<a class="headerlink" href="#injury-record-lifecycle" title="Link to this heading">#</a></h2>
+<p>The injury record progresses through the following stages, with specific edit permissions based on user roles:</p>
+<ul class="simple">
+<li><p><strong>In Recovery</strong>: The player is actively recovering from the injury</p></li>
+<li><p><strong>Setback in Recovery</strong>: A complication has occurred, delaying the recovery process.</p></li>
+<li><p><strong>Fully Recovered</strong>: The player has successfully recovered and is fit to play</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
+</ul>
+</li>
+<li><p><strong>Permanent Disability</strong>: The injury has resulted in a long-term or permanent condition</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
+</ul>
+</li>
+<li><p><strong>Cancelled</strong>: The injury record is no longer relevant or was created in error</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="actions-required-roles">
@@ -404,22 +425,22 @@ document.write(`
 <ul class="simple">
 <li><p><strong>View Injury</strong>: Allows users to view the details of an injury.</p>
 <ul>
-<li><p>Requires <strong>player_read</strong> role or higher.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Injury (New Record)</strong>: Saves the injury details when creating a new injury record.</p>
+<li><p><strong>Save Injury (New Record)</strong>: Allows you to create a new injury record.</p>
 <ul>
-<li><p>Requires <strong>player</strong> role or <strong>player_read</strong> + <strong>doctor</strong> roles.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Injury (Existing Record)</strong>: Saves any changes made to an existing injury record.</p>
+<li><p><strong>Save Injury (Existing Record)</strong>: Allows you to modify the details of an existing injury record.</p>
 <ul>
-<li><p>Requires <strong>player</strong> role or <strong>player_read</strong> + <strong>doctor</strong> roles.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher, unless specified otherwise in the <a class="reference internal" href="#injury-record-lifecycle"><span class="xref myst">Injury Record Lifecycle</span></a>.</p></li>
 </ul>
 </li>
 <li><p><strong>Delete Injury</strong>: Allows the deletion of an injury record.</p>
 <ul>
-<li><p>Requires <strong>player_admin</strong> role or higher.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> role or higher.</p></li>
 </ul>
 </li>
 </ul>
@@ -497,6 +518,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#injury-record-lifecycle">Injury Record Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
 </ul>
