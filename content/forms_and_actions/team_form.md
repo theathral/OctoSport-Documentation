@@ -2,6 +2,12 @@
 
 The Team form is used for creating, updating, and managing teams within the system. Users can interact with the form to enter or modify team details, including name, status, sport, and key personnel such as coaches and captains. The form also includes functions for managing the team’s logo and related data.
 
+```{admonition} Teams vs Groups
+:class: tip, dropdown
+
+Groups and Teams are distinct entities within the system. Groups are used to control the visibility of pages and actions, while Teams are designed to organize players and staff for operational purposes.
+```
+
 ## Navigation (TBD)
 Steps to locate this page:
 - Navigate to the **Teams** section in the main menu.
@@ -35,9 +41,9 @@ Tabs that point to other sections related to the team:
 ## Actions & Required Roles
 
 ```{admonition} Explanation of Roles
-:class: tip
+:class: tip, dropdown
 
-Please refer to the [Role section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
+Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
 ```
 
 ### Main Actions

@@ -4,46 +4,46 @@
 format: jb-book
 root: content/intro
 chapters:
-  - file: content/templates/overview_template
-    sections:
-      - file: content/templates/dashboard_template
-      - file: content/templates/form_template
-      - file: content/templates/listview_template
+#  - file: content/templates/overview_template
+#    sections:
+#      - file: content/templates/dashboard_template
+#      - file: content/templates/form_template
+#      - file: content/templates/listview_template
 
-  - file: content/dashboards/dashboard_overview
-    sections:
-      - file: content/dashboards/admin_dashboard
-      - file: content/dashboards/user_dashboard
-      - file: content/dashboards/player_dashboard
-      - file: content/dashboards/employee_dashboard
-      - file: content/dashboards/team_dashboard
-      - file: content/dashboards/schedule_dashboard
-      - file: content/dashboards/performance_dashboard
-      - file: content/dashboards/financial_dashboard
+#  - file: content/dashboards/dashboard_overview
+#    sections:
+#      - file: content/dashboards/admin_dashboard
+#      - file: content/dashboards/user_dashboard
+#      - file: content/dashboards/player_dashboard
+#      - file: content/dashboards/employee_dashboard
+#      - file: content/dashboards/team_dashboard
+#      - file: content/dashboards/schedule_dashboard
+#      - file: content/dashboards/performance_dashboard
+#      - file: content/dashboards/financial_dashboard
 
   - file: content/forms_and_actions/forms_and_actions_overview
     sections:
-      - file: content/forms_and_actions/sport_form
+#      - file: content/forms_and_actions/sport_form
       - file: content/forms_and_actions/group_form
       - file: content/forms_and_actions/role_form
-      - file: content/forms_and_actions/user_form
+#      - file: content/forms_and_actions/user_form
 
-      - file: content/forms_and_actions/player_form
+#      - file: content/forms_and_actions/player_form
       - file: content/forms_and_actions/injury_form
 
-      - file: content/forms_and_actions/employee_form
+#      - file: content/forms_and_actions/employee_form
 
       - file: content/forms_and_actions/team_form
 
-      - file: content/forms_and_actions/schedule_form
-      - file: content/forms_and_actions/event_form
-      - file: content/forms_and_actions/result_form
-      - file: content/forms_and_actions/attendance_form
+#      - file: content/forms_and_actions/schedule_form
+#      - file: content/forms_and_actions/event_form
+#      - file: content/forms_and_actions/result_form
+#      - file: content/forms_and_actions/attendance_form
 
-      - file: content/forms_and_actions/performance_form
+#      - file: content/forms_and_actions/performance_form
       - file: content/forms_and_actions/feedback_form
       - file: content/forms_and_actions/achievement_form
 
-      - file: content/forms_and_actions/sponsor_form
-      - file: content/forms_and_actions/contract_form
+#      - file: content/forms_and_actions/sponsor_form
+#      - file: content/forms_and_actions/contract_form
       - file: content/forms_and_actions/payment_form
