@@ -20,16 +20,18 @@ Steps to locate this page:
 
 ## Fields & Functions
 
-- **Id** (read-only): A unique identifier for each team.
+- **Id** (read-only): A unique identifier for each team record.
 - **Name** (required): The official name of the team.
 - **Description**: A brief description of the team, explaining what the team is about or its goals.
-- **Status** (required): A dropdown menu to select the current recovery status of the team. More at: [Team Record Lifecycle](#team-record-lifecycle).
+- **Status** (required): A dropdown menu to select the current status of the team. More at: [Team Record Lifecycle](#team-record-lifecycle).
 - **Sport** (required): Reference field linking to the sport that the team participates in. This is linked to a list of available sports for the sports club.
 - **Coach**: Reference field linking to the coach of the team. Only users with the `coach` role appear here.
 - **Captain**: Reference field linking to the captain of the team from the list of players.
 - **Logo**: Image that represents the team, such as the team's official logo.
 
 [IMAGE]
+
+(team-record-lifecycle)=
 
 ## Team Record Lifecycle
 
@@ -131,7 +133,7 @@ Please refer to the [Role Hierarchy section](system-roles) for details about rol
 - **View Feedback**: Allows you to view feedback given for the team’s performance.
     - Requires `team_read` and `performance_read` roles or higher.
 - **Give Feedback**: Allows you to provide feedback for the team’s performance in a specific event.
-    - **How**: This action will open a pop-up window to add a feedback.
+    - **How**: This option opens a new window to the feedback record with populated the Team field value where you can enter the feedback details.
     - Requires `team_read` and `performance` roles or higher.
 - **Delete Feedback**: Allows you to delete a feedback from the system associated with the team.
     - **How**: This action is available inline next to each record.
@@ -142,7 +144,7 @@ Please refer to the [Role Hierarchy section](system-roles) for details about rol
 - **View Achievements**: Allows you to see the team’s achievements and awards.
     - Requires `team_read` and `performance_read` roles or higher.
 - **Add Achievement**: Allows you to add a new achievement for the team.
-    - **How**: This action will open a pop-up window to add a feedback.
+    - **How**: This option opens a new window to the achievement record with populated the Team field value where you can enter the achievement details.
     - Requires `team_read` and `performance` roles or higher.
 - **Delete Achievement**: Allows you to delete an achievement from the system associated with the team.
     - **How**: This action is available inline next to each record.
