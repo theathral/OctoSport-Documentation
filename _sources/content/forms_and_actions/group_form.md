@@ -37,46 +37,44 @@ Tabs that point to other sections related to the group:
 - **[Roles](./role_form.md)**: View and manage roles associated with the group.
   [IMAGE]
 
-## Actions & Required Roles
+## Action Buttons
 
-```{admonition} Explanation of Roles
-:class: seealso
+### Main Buttons
+
+- **Save Group**: Creates or updates a group record.
+- **Delete Group**: Deletes an existing group.
+    - Available only on existing records.
+
+### Users Tab Buttons
+
+- **View Tab**: View the list of users associated with the group.
+- **Add User to Group**: Shows a pop-up window to add a user to the group.
+- **Remove User from Group**: Removes a user from the group (inline button).
+
+### Roles Tab Buttons
+
+- **View Tab**: View the list of roles assigned to the group.
+- **Add Role to Group**: Shows a pop-up window to add a role to the group.
+- **Remove Role from Group**: Removes a role from the group (inline button).
+
+## Required Roles
 
 Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
-```
 
-### Main Actions
-
-- **View Group**: Allows you to view the group's details.
-    - Requires `admin_read` or `admin` role.
-- **Save Group (New Record)**: Allows you to create a new group record.
-    - Requires `admin` role.
-- **Save Group (Existing Record)**: Allows you to modify the details of an existing group record.
-    - Requires `admin` role.
-- **Delete Group**: Allows you to delete a group.
-    - Requires `admin` role.
-
-### Users Actions
-
-- **View Users**: Allows you to view the list of users associated with the group.
-    - Requires `admin_read` or `admin` role.
-- **Add User to Group**: Allows you to add a new user to the group.
-    - **How**: This action will open a pop-up window to add a user.
-    - Requires `admin` role.
-- **Remove User from Group**: Allows you to remove a user from the group.
-    - **How**: This action is available inline next to each record.
-    - Requires `admin` role.
-
-### Roles Actions
-
-- **View Roles**: Allows you to see the list of roles assigned to the group.
-    - Requires `admin_read` or `admin` role.
-- **Add Role to Group**: Allows you to add a new role to the group.
-    - **How**: This action will open a pop-up window to add a role.
-    - Requires `admin` role.
-- **Remove Role from Group**: Allows you to remove a role from the group.
-    - **How**: This action is available inline next to each record.
-    - Requires `admin` role.
+- **Retrieve Record**: Requires `admin_read` role or higher.
+- **Create Record**: Requires `admin` role or higher.
+- **Update Record**: Requires `admin` role or higher.
+- **Delete Record**: Requires `admin` role or higher.
+- _Users Tab_:
+    - **Retrieve Record**: Requires `admin_read` role or higher.
+    - **Create Record**: Requires `admin` role or higher.
+    - **Update Record**: Does not exist.
+    - **Delete Record**: Requires `admin` role or higher.
+- _Roles Tab_:
+    - **Retrieve Record**: Requires `admin_read` role or higher.
+    - **Create Record**: Requires `admin` role or higher.
+    - **Update Record**: Does not exist.
+    - **Delete Record**: Requires `admin` role or higher.
 
 ## Other Important Information
 

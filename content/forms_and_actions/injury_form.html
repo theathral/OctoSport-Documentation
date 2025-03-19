@@ -191,6 +191,8 @@
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contract_form.html">Contract Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="payment_form.html">Payment Details Form and Actions</a></li>
 </ul>
 </details></li>
@@ -345,10 +347,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#injury-record-lifecycle">Injury Record Lifecycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
@@ -383,8 +383,8 @@ document.write(`
 <li><p><strong>Name</strong> (required): The name or title of the injury record.</p></li>
 <li><p><strong>Comments</strong>: Additional notes related to the injury.</p></li>
 <li><p><strong>Status</strong> (required): A dropdown menu to select the current recovery status of the injury. More at: <a class="reference internal" href="#injury-record-lifecycle"><span class="xref myst">Injury Record Lifecycle</span></a>.</p></li>
-<li><p><strong>Player</strong>: Reference field linking the player having the injury.</p></li>
-<li><p><strong>Doctor</strong>: Reference field linking to a doctor overlooking the injury (filtered to users with the doctor role).</p></li>
+<li><p><strong>Player</strong> (required): Reference field linking the player having the injury.</p></li>
+<li><p><strong>Doctor</strong>: Reference field linking to a doctor overlooking the injury (filtered to users with the <code class="docutils literal notranslate"><span class="pre">doctor</span></code> role).</p></li>
 <li><p><strong>Injury Date</strong>: The date when the injury occurred.</p></li>
 <li><p><strong>Estimated Rehabilitation Date</strong>: The expected recovery completion date.</p></li>
 <li><p><strong>Actual Rehabilitation Date</strong>: The actual date when the player recovered.</p></li>
@@ -393,58 +393,42 @@ document.write(`
 </section>
 <section id="injury-record-lifecycle">
 <h2>Injury Record Lifecycle<a class="headerlink" href="#injury-record-lifecycle" title="Link to this heading">#</a></h2>
-<p>The injury record progresses through the following stages, with specific edit permissions based on user roles:</p>
+<p>The injury record progresses through the following stages:</p>
 <ul class="simple">
-<li><p><strong>In Recovery</strong>: The player is actively recovering from the injury</p></li>
+<li><p><strong>In Recovery</strong>: The player is actively recovering from the injury.</p></li>
 <li><p><strong>Setback in Recovery</strong>: A complication has occurred, delaying the recovery process.</p></li>
-<li><p><strong>Fully Recovered</strong>: The player has successfully recovered and is fit to play</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
+<li><p><strong>Fully Recovered</strong>: The player has successfully recovered and is fit to play.</p></li>
+<li><p><strong>Permanent Disability</strong>: The injury has resulted in a long-term or permanent condition.</p></li>
+<li><p><strong>Cancelled</strong>: The injury record is no longer relevant or was created in error.</p></li>
 </ul>
-</li>
-<li><p><strong>Permanent Disability</strong>: The injury has resulted in a long-term or permanent condition</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
-</ul>
-</li>
-<li><p><strong>Cancelled</strong>: The injury record is no longer relevant or was created in error</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
-</ul>
-</li>
-</ul>
+<p>[IMAGE]</p>
 </section>
-<section id="actions-required-roles">
-<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
-<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
-<section id="main-actions">
-<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
+<section id="action-buttons">
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>View Injury</strong>: Allows users to view the details of an injury.</p>
+<li><p><strong>Save Injury</strong>: Creates or updates an injury record.</p></li>
+<li><p><strong>Delete Injury</strong>: Deletes an injury record.</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Injury (New Record)</strong>: Allows you to create a new injury record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Injury (Existing Record)</strong>: Allows you to modify the details of an existing injury record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher, unless specified otherwise in the <a class="reference internal" href="#injury-record-lifecycle"><span class="xref myst">Injury Record Lifecycle</span></a>.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Injury</strong>: Allows the deletion of an injury record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> role or higher.</p></li>
+<li><p>Available only on existing records.</p></li>
 </ul>
 </li>
 </ul>
 </section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
+<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
+<ul class="simple">
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>:</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">internal_user</span></code> role, if injury is associated to that user directly through <strong>Player</strong> field.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher, if status is <strong>In Recovery</strong> or <strong>Setback In Recovery</strong></p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> role or higher, if status is <strong>Fully Recovered</strong>, <strong>Permanent Disability</strong>, or <strong>Cancelled</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> role or higher.</p></li>
+</ul>
 </section>
 <section id="other-important-information">
 <h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
@@ -519,10 +503,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#injury-record-lifecycle">Injury Record Lifecycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>

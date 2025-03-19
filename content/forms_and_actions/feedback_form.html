@@ -191,6 +191,8 @@
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contract_form.html">Contract Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="payment_form.html">Payment Details Form and Actions</a></li>
 </ul>
 </details></li>
@@ -344,10 +346,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-record-lifecycle">Feedback Record Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
@@ -375,19 +376,12 @@ document.write(`
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each feedback record.</p></li>
-<li><p><strong>Name</strong>: The name or title of the feedback record.</p></li>
-<li><p><strong>Description</strong>: Additional notes related to the feedback.</p></li>
-<li><p><strong>Status</strong> (read-only): A dropdown menu indicating the feedback’s current status. Options include:</p>
-<ul>
-<li><p>Draft</p></li>
-<li><p>Published</p></li>
-<li><p>Hidden Published</p></li>
-<li><p>Cancelled</p></li>
-</ul>
-</li>
-<li><p><strong>Given by</strong>: Reference field (read-only) indicating the user who provided the feedback (logged-in user).</p></li>
-<li><p><strong>Event</strong>: Reference field linking the feedback to a specific event.</p></li>
-<li><p><strong>Team / User</strong>: M2M table allowing selection between a team or individual user (if changed, previous record is deleted).</p></li>
+<li><p><strong>Name</strong> (required): The name or title of the feedback record.</p></li>
+<li><p><strong>Description</strong>: Full text description of given feedback.</p></li>
+<li><p><strong>Status</strong> (read-only): A dropdown menu indicating the current feedback status. More at: <a class="reference internal" href="#feedback-record-lifecycle"><span class="xref myst">Feedback Record Lifecycle</span></a>.</p></li>
+<li><p><strong>Given by</strong> (read-only): Shows the name of the person who provided the feedback. The field is populated by the user created the record.</p></li>
+<li><p><strong>Event</strong>: Reference field linking to a specific event related to the feedback.</p></li>
+<li><p><strong>Team or User</strong>: Reference field linking to the user or team that the feedback is about.</p></li>
 <li><p><strong>Rating</strong>: A numerical rating with the following options:</p>
 <ul>
 <li><p>1 - Below Expectation</p></li>
@@ -398,61 +392,67 @@ document.write(`
 </ul>
 </li>
 </ul>
+<p>[IMAGE]</p>
 </section>
-<section id="actions-required-roles">
-<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
-<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
-<section id="main-actions">
-<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
+<section id="feedback-record-lifecycle">
+<h2>Feedback Record Lifecycle<a class="headerlink" href="#feedback-record-lifecycle" title="Link to this heading">#</a></h2>
+<p>The feedback record progresses through the following stages:</p>
 <ul class="simple">
-<li><p><strong>View Feedback</strong>: Allows users to view the details of feedback.</p>
+<li><p><strong>Draft</strong>: The feedback is still being edited.</p></li>
+<li><p><strong>Published</strong>: The feedback is publicly available.</p></li>
+<li><p><strong>Hidden Published</strong>: The feedback is published but hidden from the users associated with.</p></li>
+<li><p><strong>Cancelled</strong>: The feedback record is no longer relevant or was created in error.</p></li>
+</ul>
+<p>[IMAGE]</p>
+</section>
+<section id="action-buttons">
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Save Feedback</strong>: Creates or updates a feedback record.</p></li>
+<li><p><strong>Publish Feedback</strong>: Marks a feedback record as published.</p>
 <ul>
-<li><p>Requires <strong>performance_read</strong> role or higher.</p></li>
+<li><p>Available only if the feedback status is <strong>Draft</strong>.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Feedback (New Record)</strong>: Saves the feedback details when creating a new feedback record.</p>
+<li><p><strong>Hidden Publish Feedback</strong>: Marks a feedback record as published while keeping it hidden from the associated users</p>
 <ul>
-<li><p>Requires <strong>performance</strong> role or <strong>feedback_create</strong> role.</p></li>
+<li><p>Available only if the feedback status is <strong>Draft</strong>.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Feedback (Existing Record)</strong>: Saves any changes made to an existing feedback record.</p>
+<li><p><strong>Cancel Feedback</strong>: Marks a feedback record as cancelled.</p>
 <ul>
-<li><p>Requires <strong>performance</strong> role or <strong>feedback_create</strong> role.</p></li>
-<li><p>If user has <strong>feedback_create</strong> role, they can only modify feedback where <strong>Given by</strong> = {User}.</p></li>
+<li><p>Available only on existing records, not in <strong>Cancelled</strong> status.</p></li>
 </ul>
 </li>
-<li><p><strong>Publish Feedback</strong>: Publishes a feedback record.</p>
+<li><p><strong>Delete Feedback</strong>: Deletes a feedback record.</p>
 <ul>
-<li><p>Requires <strong>performance</strong> role or <strong>feedback_create</strong> role.</p></li>
-<li><p>Must be in <strong>Draft</strong> status.</p></li>
-<li><p>If user has <strong>feedback_create</strong> role, they can only modify feedback where <strong>Given by</strong> = {User}.</p></li>
-</ul>
-</li>
-<li><p><strong>Hidden Publish Feedback</strong>: Publishes feedback in a hidden state.</p>
-<ul>
-<li><p>Requires <strong>performance</strong> role or <strong>feedback_create</strong> role.</p></li>
-<li><p>Must be in <strong>Draft</strong> status.</p></li>
-<li><p>If user has <strong>feedback_create</strong> role, they can only modify feedback where <strong>Given by</strong> = {User}.</p></li>
-</ul>
-</li>
-<li><p><strong>Cancel Feedback</strong>: Cancels a feedback record.</p>
-<ul>
-<li><p>Requires <strong>performance</strong> role or <strong>feedback_create</strong> role.</p></li>
-<li><p>Must be in <strong>Draft</strong> status.</p></li>
-<li><p>If user has <strong>feedback_create</strong> role, they can only modify feedback where <strong>Given by</strong> = {User}.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Feedback</strong>: Allows the deletion of a feedback record.</p>
-<ul>
-<li><p>Requires <strong>performance_admin</strong> role or higher.</p></li>
-<li><p>Deletes M2M Users and Teams associated with the feedback.</p></li>
+<li><p>Available only on existing records.</p></li>
 </ul>
 </li>
 </ul>
 </section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
+<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
+<ul class="simple">
+<li><p><strong>Retrieve Record</strong>:</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">internal_user</span></code> role, if status is <strong>Published</strong> and feedback is associated to that user directly or indirectly through <strong>Team or User</strong> field.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">feedback_create</span></code> role, if feedback has been created by that user.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> role or higher.</p></li>
+</ul>
+</li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">feedback_create</span></code> role or <code class="docutils literal notranslate"><span class="pre">performance</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>:</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">feedback_create</span></code> role, if status is <strong>Draft</strong> and feedback has been created by that user.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">performance</span></code> role or higher, if status is <strong>Draft</strong>.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> role or higher, if status is <strong>Published</strong>, <strong>Hidden Published</strong>, or <strong>Cancelled</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> role or higher.</p></li>
+<li><p><strong>Status field</strong>: Editable for <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> role or higher.</p></li>
+</ul>
 </section>
 <section id="other-important-information">
 <h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
@@ -526,10 +526,9 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-record-lifecycle">Feedback Record Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>

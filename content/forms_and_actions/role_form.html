@@ -191,6 +191,8 @@
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contract_form.html">Contract Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="payment_form.html">Payment Details Form and Actions</a></li>
 </ul>
 </details></li>
@@ -345,12 +347,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#users-actions">Users Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-actions">Groups Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#users-tab-buttons">Users Tab Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-tab-buttons">Groups Tab Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-roles">System Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-specific-roles">Section-Specific Roles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-roles">Special roles</a></li>
@@ -410,66 +412,50 @@ document.write(`
 [IMAGE]</p></li>
 </ul>
 </section>
-<section id="actions-required-roles">
-<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
+<section id="action-buttons">
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
+<section id="users-tab-buttons">
+<h3>Users Tab Buttons<a class="headerlink" href="#users-tab-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of users associated with the role.</p></li>
+<li><p><strong>Add Role to User</strong>: Shows a pop-up window to add a role to the user.</p></li>
+<li><p><strong>Remove Role from User</strong>: Removes a role from the user (inline button).</p></li>
+</ul>
+</section>
+<section id="groups-tab-buttons">
+<h3>Groups Tab Buttons<a class="headerlink" href="#groups-tab-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of groups associated with the role.</p></li>
+<li><p><strong>Add Role to Group</strong>: Shows a pop-up window to add a role to the groups.</p></li>
+<li><p><strong>Remove Role from Group</strong>: Removes a role from the groups (inline button).</p></li>
+</ul>
+</section>
+</section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
 <p>Please refer to the <a class="reference internal" href="#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
-<section id="main-actions">
-<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Role</strong>: Allows you to view the role’s details.</p>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Does not exist.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Does not exist.</p></li>
+<li><p><em>Users Tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role or higher.</p></li>
+</ul>
+</li>
+<li><p><em>Groups Tab</em>:</p>
+<ul>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role or higher.</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="users-actions">
-<h3>Users Actions<a class="headerlink" href="#users-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Users</strong>: Allows you to view the list of users associated with the role.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-</ul>
-</li>
-<li><p><strong>Add User to Role</strong>: Lets you assign a user to the role. This action will open a pop-up window to add a user.</p>
-<ul>
-<li><p><strong>How</strong>: This action will open a pop-up window to add a user.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-</ul>
-</li>
-<li><p><strong>Remove User from Role</strong>: Lets you remove a user from the role. This action is available inline next to each user.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="groups-actions">
-<h3>Groups Actions<a class="headerlink" href="#groups-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Groups</strong>: Allows you to view the list of groups associated with the role.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin_read</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-</ul>
-</li>
-<li><p><strong>Add Role to Group</strong>: Lets you assign the role to a group. This action will open a pop-up window to add a role.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-<li><p><strong>How</strong>: This action will open a pop-up window to add a group.</p></li>
-</ul>
-</li>
-<li><p><strong>Remove Role from Group</strong>: Lets you remove a role from a group. This action is available inline next to each group.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">admin</span></code> role.</p></li>
-</ul>
-</li>
-</ul>
-</section>
 </section>
 <section id="system-roles">
 <span id="id1"></span><h2>System Roles<a class="headerlink" href="#system-roles" title="Link to this heading">#</a></h2>
@@ -688,12 +674,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#users-actions">Users Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-actions">Groups Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#users-tab-buttons">Users Tab Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups-tab-buttons">Groups Tab Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-roles">System Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-specific-roles">Section-Specific Roles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-roles">Special roles</a></li>
