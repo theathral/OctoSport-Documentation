@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="role_form.html">Role Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
@@ -350,9 +351,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#payments-actions">Payments Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments-buttons">Pending Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
@@ -386,11 +388,11 @@ document.write(`
 </section>
 <section id="fields-functions">
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
-<ul>
+<ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each contract record.</p></li>
 <li><p><strong>Name</strong> (required): The contract title or reference name.</p></li>
 <li><p><strong>Type</strong> (required): A dropdown menu selecting the type of contract. Options:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Player Membership</strong>: A contract defining a player’s membership agreement with a team or club.</p></li>
 <li><p><strong>Sponsorship</strong>: A contract related to sponsorship agreements between a sponsor and the team or club.</p></li>
 <li><p><strong>Employee/Player Compensation</strong>: A contract covering salary and financial compensation for staff or players.</p></li>
@@ -398,11 +400,7 @@ document.write(`
 <li><p><strong>Other Revenue</strong>: A contract for miscellaneous revenue sources not covered in the predefined categories.</p></li>
 </ul>
 </li>
-<li><p><strong>Status</strong> (read-only): A dropdown menu selecting the contract’s current status. More at: <a class="reference internal" href="#contract-record-lifecycle">Contract Record Lifecycle</a>.</p>
-<ul class="simple">
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to directly edit the field.</p></li>
-</ul>
-</li>
+<li><p><strong>Status</strong> (read-only): A dropdown menu selecting the contract’s current status. More at: <a class="reference internal" href="#contract-record-lifecycle"><span class="xref myst">Contract Record Lifecycle</span></a>.</p></li>
 <li><p><strong>User</strong>: Reference field linking a user to the contract.</p></li>
 <li><p><strong>Team</strong>: Reference field linking a team to the contract.</p></li>
 <li><p><strong>Sponsor</strong>: Reference field linking a sponsor to the contract. Required if the contract type is <strong>Sponsorship</strong>.</p></li>
@@ -410,7 +408,7 @@ document.write(`
 <li><p><strong>Contract Start Date</strong> (required): The start date of the contract.</p></li>
 <li><p><strong>Contract End Date</strong>: The end date of the contract.</p></li>
 <li><p><strong>Contract/Payment Terms</strong> (required): A dropdown menu selecting the payment frequency. Options include:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>Lump Sum</strong>: A one-time full payment.</p></li>
 <li><p><strong>Installments</strong>: Payments divided into multiple installments.</p></li>
 <li><p><strong>Weekly</strong>: Payments made every week.</p></li>
@@ -423,14 +421,13 @@ document.write(`
 <li><p><strong>Total Contract Value</strong> (required): The total monetary value of the contract.</p></li>
 <li><p><strong>Amount Due</strong> (read-only): The remaining balance to be paid, calculated from contract value minus payments made.</p></li>
 <li><p><strong>Amount Paid</strong> (read-only): The total amount already paid, calculated from recorded payments.</p></li>
-<li><p><strong>Comments</strong>: Additional notes or details about the contract.</p>
-<p>[IMAGE]</p>
-</li>
+<li><p><strong>Comments</strong>: Additional notes or details about the contract.</p></li>
 </ul>
+<p>[IMAGE]</p>
 </section>
 <section id="contract-record-lifecycle">
-<span id="id1"></span><h2>Contract Record Lifecycle<a class="headerlink" href="#contract-record-lifecycle" title="Link to this heading">#</a></h2>
-<p>The contract record progresses through the following stages, with specific edit permissions based on user roles:</p>
+<h2>Contract Record Lifecycle<a class="headerlink" href="#contract-record-lifecycle" title="Link to this heading">#</a></h2>
+<p>The contract record progresses through the following stages:</p>
 <ul class="simple">
 <li><p><strong>Draft</strong>: The contract is being created and has not yet been signed.</p></li>
 <li><p><strong>Signed</strong>: The contract has been signed by all parties but is not yet active.</p></li>
@@ -443,19 +440,14 @@ document.write(`
 <li><p><strong>Expired</strong>: The contract has reached its end date and is no longer active.</p>
 <ul>
 <li><p>This status triggers automatically when the contract is in <strong>Active</strong> status and the current date matches the contract’s end date.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
 </ul>
 </li>
 <li><p><strong>Terminated</strong>: The contract has been ended before its natural expiration.</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
+<li><p>This status triggers automatically when the contract is in <strong>Suspended</strong> status and the current date matches the contract’s end date.</p></li>
 </ul>
 </li>
-<li><p><strong>Canceled</strong>: The contract has been cancelled before activation.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
-</ul>
-</li>
+<li><p><strong>Canceled</strong>: The contract has been cancelled before activation.</p></li>
 </ul>
 </section>
 <section id="related-lists">
@@ -468,92 +460,73 @@ document.write(`
 </section>
 <section id="actions-required-roles">
 <h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
-<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
 <section id="main-actions">
 <h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Contract</strong>: Allows you to view the contract details.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Contract (New Record)</strong>: Allows you to create a new contract record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Contract (Existing Record)</strong>: Allows you to modify an existing contract record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher, unless specified otherwise in the <a class="reference internal" href="#contract-record-lifecycle">Contract Record Lifecycle</a>.</p></li>
-</ul>
-</li>
+<li><p><strong>Save Contract</strong>: Creates or updates the contract record.</p></li>
 <li><p><strong>Sign Contract</strong>: Marks the contract as signed.</p>
 <ul>
 <li><p>Available only if the contract status is <strong>Draft</strong>.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Suspend Contract</strong>: Marks an active contract as suspend.</p>
+<li><p><strong>Suspend Contract</strong>: Marks the contract as suspended.</p>
 <ul>
 <li><p>Available only if the contract status is <strong>Active</strong>.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Unsuspend Contract</strong>: Marks a suspended contract as active.</p>
+<li><p><strong>Unsuspend Contract</strong>: Marks the contract as active.</p>
 <ul>
 <li><p>Available only if the contract status is <strong>Suspended</strong>.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Terminate Contract</strong>: Marks an active contract as terminate.</p>
+<li><p><strong>Terminate Contract</strong>: Marks the contract as terminated.</p>
 <ul>
 <li><p>Available only if the contract status is <strong>Active</strong>.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Cancel Contract</strong>: Marks a draft contract as cancel.</p>
+<li><p><strong>Cancel Contract</strong>: Marks the contract as cancelled.</p>
 <ul>
 <li><p>Available only if the contract status is <strong>Draft</strong>.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Delete Contract</strong>: Allows you to delete an existing contract record.</p>
+<li><p><strong>Delete Contract</strong>: Deletes a contract record.</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
+<li><p>Available only on existing records.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="payments-actions">
-<h3>Payments Actions<a class="headerlink" href="#payments-actions" title="Link to this heading">#</a></h3>
+<section id="pending-payments-buttons">
+<h3>Pending Payments Buttons<a class="headerlink" href="#pending-payments-buttons" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Payments</strong>: Allows you to view the payments linked to the contract.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Create Single Payment</strong>: Allows you to create a new payment record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Create Bulk Payments</strong>: Allows creating multiple payments at once.</p>
-<ul>
-<li><p><strong>How</strong>: This option opens a new window to the payment record with populated the Contract field value where you can enter the contract details.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Payment</strong>: Allows deleting an existing payment.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
-</ul>
-</li>
+<li><p><strong>View Tab</strong>: View the list of pending payments. Remove the filter to see all the payments of the sponsor.</p></li>
+<li><p><strong>Create Payment</strong>: Opens a new window to the payment record with populated the Contract field value where payment details can be entered.</p></li>
+<li><p><strong>Delete Payment</strong>: Deletes a payment (inline button).</p></li>
 </ul>
 </section>
+</section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
+<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
+<ul class="simple">
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>:</p>
+<ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher, if status is <strong>Draft</strong>, <strong>Signed</strong>, or <strong>Suspended</strong>.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher, if status is <strong>Expired</strong>, <strong>Terminated</strong>, or <strong>Canceled</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
+<li><p><em>Pending Payments tab</em>:</p>
+<ul>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="other-important-information">
 <h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
@@ -631,9 +604,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#payments-actions">Payments Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments-buttons">Pending Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>

@@ -36,16 +36,16 @@ The payment record progresses through the following stages:
 - **Refunded**: The payment has been returned, typically due to cancellations or errors.
 - **Cancelled**: The payment process has been stopped, and will not be made.
 
-### Action Buttons
+## Action Buttons
 
-- **Save Payment**: Creates or updates a payment record.
-- **Mark Payment Paid**: Marks a payment as successfully processed and completed.
+- **Save Payment**: Creates or updates the payment record.
+- **Mark Payment Paid**: Marks the payment as successfully processed and completed.
     - Available only if the payment status is **Pending**.
 - **Payment Refunded**: Marks a payment as refunded.
     - Available only if the payment status is **Pending**.
 - **Cancel Payment**: Marks a payment record as cancelled.
     - Available only if the payment status is **Pending**.
-- **Delete Payment**: Deletes an existing payment record.
+- **Delete Payment**: Deletes the existing payment record.
     - Available only on existing records.
 
 ## Required Roles

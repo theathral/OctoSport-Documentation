@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="role_form.html">Role Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Sponsor Form and Actions</a></li>
@@ -347,12 +348,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts">Contracts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments">Pending Payments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-buttons">Main Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-buttons">Contracts Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments-buttons">Pending Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
@@ -386,7 +388,6 @@ document.write(`
 </section>
 <section id="fields-functions">
 <h2>Fields &amp; Functions<a class="headerlink" href="#fields-functions" title="Link to this heading">#</a></h2>
-<p>The Sponsor form includes several fields:</p>
 <ul class="simple">
 <li><p><strong>Id</strong> (read-only): A unique identifier for each sponsor record.</p></li>
 <li><p><strong>Name</strong> (required): The official name of the sponsor.</p></li>
@@ -416,69 +417,59 @@ document.write(`
 [IMAGE]</p></li>
 </ul>
 </section>
-<section id="actions-required-roles">
-<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
+<section id="action-buttons">
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
+<section id="main-buttons">
+<h3>Main Buttons<a class="headerlink" href="#main-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Save Sponsor</strong>: Creates or updates the sponsor record.</p></li>
+<li><p><strong>Delete Sponsor</strong>: Deletes the sponsor record.</p>
+<ul>
+<li><p>Available only on existing records.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="contracts-buttons">
+<h3>Contracts Buttons<a class="headerlink" href="#contracts-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of sponsors associated with the sponsor.</p></li>
+<li><p><strong>Create Contract</strong>: Opens a new window to the contract record with populated the Sponsor field value where contract details can be entered.</p></li>
+<li><p><strong>Delete Contract</strong>: Deletes the contract (inline button).</p></li>
+</ul>
+</section>
+<section id="pending-payments-buttons">
+<h3>Pending Payments Buttons<a class="headerlink" href="#pending-payments-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of pending payments. Remove the filter to see all the payments of the sponsor.</p></li>
+</ul>
+</section>
+</section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
 <p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
-<section id="main-actions">
-<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Sponsor</strong>: Allows you to view sponsor details.</p>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
+<li><p><em>Contracts tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Save Sponsor (New Record)</strong>: Allows you to create a new sponsor record.</p>
+<li><p><em>Pending Payments tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Sponsor (Existing Record)</strong>: Allows you to update an existing sponsor record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Sponsor</strong>: Allows you to delete a sponsor.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="contracts">
-<h3>Contracts<a class="headerlink" href="#contracts" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Contracts</strong>: Allows you to view contract details associated with the sponsor.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Create Contract</strong>: Allows you to create a new contract.</p>
-<ul>
-<li><p><strong>How</strong>: This option opens a new window to the contract record with populated the Sponsor field value where you can enter the contract details.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Contract</strong>: Allows you to delete a contract.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Does not exist.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Does not exist.</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="pending-payments">
-<h3>Pending Payments<a class="headerlink" href="#pending-payments" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Payments</strong>: Allows you to view pending payments. You can remove the filter to see all the payments of the sponsor.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-</ul>
-</section>
 </section>
 <section id="other-important-information">
 <h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
@@ -553,12 +544,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-tbd">Navigation (TBD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts">Contracts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments">Pending Payments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-buttons">Main Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-buttons">Contracts Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pending-payments-buttons">Pending Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>

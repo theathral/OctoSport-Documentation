@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="role_form.html">Role Form and Actions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Injury Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
@@ -406,8 +407,8 @@ document.write(`
 <section id="action-buttons">
 <h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Save Injury</strong>: Creates or updates an injury record.</p></li>
-<li><p><strong>Delete Injury</strong>: Deletes an injury record.</p>
+<li><p><strong>Save Injury</strong>: Creates or updates the injury record.</p></li>
+<li><p><strong>Delete Injury</strong>: Deletes the injury record.</p>
 <ul>
 <li><p>Available only on existing records.</p></li>
 </ul>
@@ -423,7 +424,7 @@ document.write(`
 <li><p><strong>Update Record</strong>:</p>
 <ul>
 <li><p>Requires <code class="docutils literal notranslate"><span class="pre">internal_user</span></code> role, if injury is associated to that user directly through <strong>Player</strong> field.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher, if status is <strong>In Recovery</strong> or <strong>Setback In Recovery</strong></p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> + <code class="docutils literal notranslate"><span class="pre">doctor</span></code> roles or <code class="docutils literal notranslate"><span class="pre">player</span></code> role or higher, if status is <strong>In Recovery</strong> or <strong>Setback In Recovery</strong>.</p></li>
 <li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> role or higher, if status is <strong>Fully Recovered</strong>, <strong>Permanent Disability</strong>, or <strong>Cancelled</strong>.</p></li>
 </ul>
 </li>

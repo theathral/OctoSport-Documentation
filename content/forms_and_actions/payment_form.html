@@ -188,6 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="role_form.html">Role Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="team_form.html">Team Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
@@ -348,10 +349,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#payment-record-lifecycle">Payment Record Lifecycle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#payment-record-lifecycle">Payment Record Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
@@ -405,11 +404,12 @@ document.write(`
 <li><p><strong>Refunded</strong>: The payment has been returned, typically due to cancellations or errors.</p></li>
 <li><p><strong>Cancelled</strong>: The payment process has been stopped, and will not be made.</p></li>
 </ul>
+</section>
 <section id="action-buttons">
-<h3>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h3>
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Save Payment</strong>: Creates or updates a payment record.</p></li>
-<li><p><strong>Mark Payment Paid</strong>: Marks a payment as successfully processed and completed.</p>
+<li><p><strong>Save Payment</strong>: Creates or updates the payment record.</p></li>
+<li><p><strong>Mark Payment Paid</strong>: Marks the payment as successfully processed and completed.</p>
 <ul>
 <li><p>Available only if the payment status is <strong>Pending</strong>.</p></li>
 </ul>
@@ -424,13 +424,12 @@ document.write(`
 <li><p>Available only if the payment status is <strong>Pending</strong>.</p></li>
 </ul>
 </li>
-<li><p><strong>Delete Payment</strong>: Deletes an existing payment record.</p>
+<li><p><strong>Delete Payment</strong>: Deletes the existing payment record.</p>
 <ul>
 <li><p>Available only on existing records.</p></li>
 </ul>
 </li>
 </ul>
-</section>
 </section>
 <section id="required-roles">
 <h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
@@ -514,10 +513,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#payment-record-lifecycle">Payment Record Lifecycle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#payment-record-lifecycle">Payment Record Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>

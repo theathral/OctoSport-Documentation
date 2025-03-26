@@ -20,8 +20,6 @@ Steps to locate this page:
 
 ## Fields & Functions
 
-The Sponsor form includes several fields:
-
 - **Id** (read-only): A unique identifier for each sponsor record.
 - **Name** (required): The official name of the sponsor.
 - **Description**: A brief description of the sponsor.
@@ -47,40 +45,42 @@ Tabs that point to other sections related to the sponsor:
 - **[Payments](./payment_form.md)**: Track outstanding sponsorship-related payments for the sponsor.
   [IMAGE]
 
-## Actions & Required Roles
+## Action Buttons
 
-```{admonition} Explanation of Roles
-:class: tip, dropdown
+### Main Buttons
+
+- **Save Sponsor**: Creates or updates the sponsor record.
+- **Delete Sponsor**: Deletes the sponsor record.
+  - Available only on existing records.
+
+### Contracts Buttons
+
+- **View Tab**: View the list of sponsors associated with the sponsor.
+- **Create Contract**: Opens a new window to the contract record with populated the Sponsor field value where contract details can be entered.
+- **Delete Contract**: Deletes the contract (inline button).
+
+### Pending Payments Buttons
+
+- **View Tab**: View the list of pending payments. Remove the filter to see all the payments of the sponsor.
+
+## Required Roles
 
 Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
-```
 
-### Main Actions
-
-- **View Sponsor**: Allows you to view sponsor details.
-    - Requires `financial_read` role or higher.
-- **Save Sponsor (New Record)**: Allows you to create a new sponsor record.
-    - Requires `financial` role or higher.
-- **Save Sponsor (Existing Record)**: Allows you to update an existing sponsor record.
-    - Requires `financial` role or higher.
-- **Delete Sponsor**: Allows you to delete a sponsor.
-    - Requires `financial_admin` role or higher.
-
-### Contracts
-
-- **View Contracts**: Allows you to view contract details associated with the sponsor.
-    - Requires `financial_read` role or higher.
-- **Create Contract**: Allows you to create a new contract.
-    - **How**: This option opens a new window to the contract record with populated the Sponsor field value where you can enter the contract details.
-    - Requires `financial` role or higher.
-- **Delete Contract**: Allows you to delete a contract.
-    - **How**: This action is available inline next to each record.
-    - Requires `financial_admin` role or higher.
-
-### Pending Payments
-
-- **View Payments**: Allows you to view pending payments. You can remove the filter to see all the payments of the sponsor.
-    - Requires `financial_read` role or higher.
+- **Retrieve Record**: Requires `financial_read` role or higher.
+- **Create Record**: Requires `financial` role or higher.
+- **Update Record**: Requires `financial` role or higher.
+- **Delete Record**: Requires `financial_admin` role or higher.
+- _Contracts tab_:
+  - **Retrieve Record**: Requires `financial_read` role or higher.
+  - **Create Record**: Requires `financial` role or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `financial_admin` role or higher.
+- _Pending Payments tab_:
+  - **Retrieve Record**: Requires `financial_read` role or higher.
+  - **Create Record**: Does not exist.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Does not exist.
 
 ## Other Important Information
 

@@ -29,7 +29,6 @@ Steps to locate this page:
     - **Service Agreement**: A contract related to the provision of a service to or from the club.
     - **Other Revenue**: A contract for miscellaneous revenue sources not covered in the predefined categories.
 - **Status** (read-only): A dropdown menu selecting the contract's current status. More at: [Contract Record Lifecycle](#contract-record-lifecycle).
-    - Requires `financial_admin` or `admin` role to directly edit the field.
 - **User**: Reference field linking a user to the contract.
 - **Team**: Reference field linking a team to the contract.
 - **Sponsor**: Reference field linking a sponsor to the contract. Required if the contract type is **Sponsorship**.
@@ -49,13 +48,11 @@ Steps to locate this page:
 - **Amount Paid** (read-only): The total amount already paid, calculated from recorded payments.
 - **Comments**: Additional notes or details about the contract.
 
-  [IMAGE]
-
-(contract-record-lifecycle)=
+[IMAGE]
 
 ## Contract Record Lifecycle
 
-The contract record progresses through the following stages, with specific edit permissions based on user roles:
+The contract record progresses through the following stages:
 
 - **Draft**: The contract is being created and has not yet been signed.
 - **Signed**: The contract has been signed by all parties but is not yet active.
@@ -64,11 +61,9 @@ The contract record progresses through the following stages, with specific edit 
 - **Suspended**: The contract is temporarily inactive.
 - **Expired**: The contract has reached its end date and is no longer active.
     - This status triggers automatically when the contract is in **Active** status and the current date matches the contract's end date.
-    - Requires `financial_admin` or `admin` role to edit the record after the status is saved to this value.
 - **Terminated**: The contract has been ended before its natural expiration.
-    - Requires `financial_admin` or `admin` role to edit the record after the status is saved to this value.
+    - This status triggers automatically when the contract is in **Suspended** status and the current date matches the contract's end date.
 - **Canceled**: The contract has been cancelled before activation.
-    - Requires `financial_admin` or `admin` role to edit the record after the status is saved to this value.
 
 ## Related Lists
 
@@ -79,50 +74,43 @@ Tabs that point to other sections related to the contract:
 
 ## Actions & Required Roles
 
-```{admonition} Explanation of Roles
-:class: tip, dropdown
-
-Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
-```
-
 ### Main Actions
 
-- **View Contract**: Allows you to view the contract details.
-    - Requires `financial_read` role or higher.
-- **Save Contract (New Record)**: Allows you to create a new contract record.
-    - Requires `financial` role or higher.
-- **Save Contract (Existing Record)**: Allows you to modify an existing contract record.
-    - Requires `financial` role or higher, unless specified otherwise in the [Contract Record Lifecycle](#contract-record-lifecycle).
+- **Save Contract**: Creates or updates the contract record.
 - **Sign Contract**: Marks the contract as signed.
     - Available only if the contract status is **Draft**.
-    - Requires `financial` role or higher.
-- **Suspend Contract**: Marks an active contract as suspend.
+- **Suspend Contract**: Marks the contract as suspended.
     - Available only if the contract status is **Active**.
-    - Requires `financial` role or higher.
-- **Unsuspend Contract**: Marks a suspended contract as active.
+- **Unsuspend Contract**: Marks the contract as active.
     - Available only if the contract status is **Suspended**.
-    - Requires `financial` role or higher.
-- **Terminate Contract**: Marks an active contract as terminate.
+- **Terminate Contract**: Marks the contract as terminated.
     - Available only if the contract status is **Active**.
-    - Requires `financial` role or higher.
-- **Cancel Contract**: Marks a draft contract as cancel.
+- **Cancel Contract**: Marks the contract as cancelled.
     - Available only if the contract status is **Draft**.
-    - Requires `financial` role or higher.
-- **Delete Contract**: Allows you to delete an existing contract record.
-    - Requires `financial_admin` role or higher.
+- **Delete Contract**: Deletes a contract record.
+    - Available only on existing records.
 
-### Payments Actions
+### Pending Payments Buttons
 
-- **View Payments**: Allows you to view the payments linked to the contract.
-    - Requires `financial_read` role or higher.
-- **Create Single Payment**: Allows you to create a new payment record.
-    - Requires `financial` role or higher.
-- **Create Bulk Payments**: Allows creating multiple payments at once.
-    - **How**: This option opens a new window to the payment record with populated the Contract field value where you can enter the contract details.
-    - Requires `financial` role or higher.
-- **Delete Payment**: Allows deleting an existing payment.
-    - **How**: This action is available inline next to each record.
-    - Requires `financial_admin` role or higher.
+- **View Tab**: View the list of pending payments. Remove the filter to see all the payments of the sponsor.
+- **Create Payment**: Opens a new window to the payment record with populated the Contract field value where payment details can be entered.
+- **Delete Payment**: Deletes a payment (inline button).
+
+## Required Roles
+
+Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
+
+- **Retrieve Record**: Requires `financial_read` role or higher.
+- **Create Record**: Requires `financial` role or higher.
+- **Update Record**:
+    - Requires `financial` role or higher, if status is **Draft**, **Signed**, or **Suspended**.
+    - Requires `financial_admin` role or higher, if status is **Expired**, **Terminated**, or **Canceled**.
+- **Delete Record**: Requires `financial_admin` role or higher.
+- _Pending Payments tab_:
+    - **Retrieve Record**: Requires `financial_read` role or higher.
+    - **Create Record**: Requires `financial` role or higher.
+    - **Update Record**: Does not exist.
+    - **Delete Record**: Requires `financial` role or higher.
 
 ## Other Important Information
 

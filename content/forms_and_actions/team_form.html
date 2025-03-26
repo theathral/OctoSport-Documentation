@@ -61,7 +61,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Feedback Form and Actions" href="feedback_form.html" />
+    <link rel="next" title="Schedule Form and Actions (TBD)" href="schedule_form.html" />
     <link rel="prev" title="Injury Form and Actions" href="injury_form.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="role_form.html">Role Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="injury_form.html">Injury Form and Actions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Team Form and Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_form.html">Schedule Form and Actions (TBD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_form.html">Feedback Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="achievement_form.html">Achievement Form and Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sponsor_form.html">Sponsor Form and Actions</a></li>
@@ -348,17 +349,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-record-lifecycle">Team Record Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-actions">Players Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-actions">Injuries Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-actions">Staff Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-actions">Schedule Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-actions">Feedback Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-actions">Achievements Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-actions">Contracts Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-buttons">Main Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-buttons">Players Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-buttons">Injuries Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-buttons">Staff Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-buttons">Schedule Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-buttons">Feedback Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-buttons">Achievements Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-and-payments-buttons">Contracts and Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
             </nav>
@@ -396,7 +398,7 @@ document.write(`
 <li><p><strong>Id</strong> (read-only): A unique identifier for each team record.</p></li>
 <li><p><strong>Name</strong> (required): The official name of the team.</p></li>
 <li><p><strong>Description</strong>: A brief description of the team, explaining what the team is about or its goals.</p></li>
-<li><p><strong>Status</strong> (required): A dropdown menu to select the current status of the team. More at: <a class="reference internal" href="#team-record-lifecycle">Team Record Lifecycle</a>.</p></li>
+<li><p><strong>Status</strong> (required): A dropdown menu to select the current status of the team. More at: <a class="reference internal" href="#team-record-lifecycle"><span class="xref myst">Team Record Lifecycle</span></a>.</p></li>
 <li><p><strong>Sport</strong> (required): Reference field linking to the sport that the team participates in. This is linked to a list of available sports for the sports club.</p></li>
 <li><p><strong>Coach</strong>: Reference field linking to the coach of the team. Only users with the <code class="docutils literal notranslate"><span class="pre">coach</span></code> role appear here.</p></li>
 <li><p><strong>Captain</strong>: Reference field linking to the captain of the team from the list of players.</p></li>
@@ -405,16 +407,12 @@ document.write(`
 <p>[IMAGE]</p>
 </section>
 <section id="team-record-lifecycle">
-<span id="id1"></span><h2>Team Record Lifecycle<a class="headerlink" href="#team-record-lifecycle" title="Link to this heading">#</a></h2>
+<h2>Team Record Lifecycle<a class="headerlink" href="#team-record-lifecycle" title="Link to this heading">#</a></h2>
 <p>The team record progresses through the following stages, with specific edit permissions based on user roles:</p>
 <ul class="simple">
 <li><p><strong>Pending</strong>: The team record is in the initial stage, awaiting review or approval.</p></li>
 <li><p><strong>Active</strong>: The team record is fully operational and in use.</p></li>
-<li><p><strong>Archived</strong>: The team record is no longer active but retained for historical reference.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_admin</span></code> or <code class="docutils literal notranslate"><span class="pre">admin</span></code> role to edit the record after the status is saved to this value.</p></li>
-</ul>
-</li>
+<li><p><strong>Archived</strong>: The team record is no longer active but retained for historical reference.</p></li>
 <li><p><strong>Inactive</strong>: The team record is inactive and not in use.</p></li>
 </ul>
 </section>
@@ -428,7 +426,7 @@ document.write(`
 [IMAGE]</p></li>
 <li><p><strong><span class="xref myst">Staff</span></strong>: View and manage the staff members assigned to the team.
 [IMAGE]</p></li>
-<li><p><strong><span class="xref myst">Schedule</span></strong>: View and manage the team’s schedule, including upcoming events and matches.
+<li><p><strong><a class="reference internal" href="schedule_form.html"><span class="std std-doc">Schedule</span></a></strong>: View and manage the team’s schedule, including upcoming events and matches.
 [IMAGE]</p></li>
 <li><p><strong><a class="reference internal" href="feedback_form.html"><span class="std std-doc">Feedback</span></a></strong>: View feedback related to the team’s performance.
 [IMAGE]</p></li>
@@ -440,179 +438,149 @@ document.write(`
 [IMAGE]</p></li>
 </ul>
 </section>
-<section id="actions-required-roles">
-<h2>Actions &amp; Required Roles<a class="headerlink" href="#actions-required-roles" title="Link to this heading">#</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Explanation of Roles</p>
-<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
-</div>
-<section id="main-actions">
-<h3>Main Actions<a class="headerlink" href="#main-actions" title="Link to this heading">#</a></h3>
+<section id="action-buttons">
+<h2>Action Buttons<a class="headerlink" href="#action-buttons" title="Link to this heading">#</a></h2>
+<section id="main-buttons">
+<h3>Main Buttons<a class="headerlink" href="#main-buttons" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Team</strong>: Allows you to view the team’s details.</p>
+<li><p><strong>Save Team</strong>: Creates or updates the team record.</p></li>
+<li><p><strong>Delete Team</strong>: Deletes the team record.</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Team (New Record)</strong>: Allows you to create a new team record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Save Team (Existing Record)</strong>: Allows you to modify the details of an existing team record.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> role or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Team</strong>: Allows you to delete a team.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_admin</span></code> role or higher.</p></li>
+<li><p>Available only on existing records.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="players-actions">
-<h3>Players Actions<a class="headerlink" href="#players-actions" title="Link to this heading">#</a></h3>
+<section id="players-buttons">
+<h3>Players Buttons<a class="headerlink" href="#players-buttons" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>View Players</strong>: Allows you to view the list of players associated with the team.</p>
+<li><p><strong>View Tab</strong>: View the list of players assigned to the team.</p></li>
+<li><p><strong>Add Player to Team</strong>: Shows a pop-up window to add a player to the team.</p></li>
+<li><p><strong>Remove Player from Team</strong>: Removes a players from the team (inline button).</p></li>
+</ul>
+</section>
+<section id="injuries-buttons">
+<h3>Injuries Buttons<a class="headerlink" href="#injuries-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of injury details for players on the team.</p></li>
+</ul>
+</section>
+<section id="staff-buttons">
+<h3>Staff Buttons<a class="headerlink" href="#staff-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of staff members assigned to the team.</p></li>
+<li><p><strong>Add Staff to Team</strong>: Shows a pop-up window to add a staff member to the team.</p></li>
+<li><p><strong>Remove Staff from Team</strong>: Removes a staff member from the team (inline button).</p></li>
+</ul>
+</section>
+<section id="schedule-buttons">
+<h3>Schedule Buttons<a class="headerlink" href="#schedule-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of events assigned to the team.</p></li>
+<li><p><strong>Add Team to Schedule</strong>: Shows a pop-up window to schedule the team for an (upcoming) series of events or matches.</p></li>
+<li><p><strong>Remove Team from Schedule</strong>: Removes the team from a series of events or matches (inline button).</p></li>
+</ul>
+</section>
+<section id="feedback-buttons">
+<h3>Feedback Buttons<a class="headerlink" href="#feedback-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of feedback given for the team’s performance.</p></li>
+<li><p><strong>Create Feedback</strong>: Opens a new window to the feedback record to provide feedback for the team’s performance in a specific event with populated the Team field value where feedback details can be entered.</p></li>
+<li><p><strong>Delete Feedback</strong>: Deletes the feedback (inline button).</p></li>
+</ul>
+</section>
+<section id="achievements-buttons">
+<h3>Achievements Buttons<a class="headerlink" href="#achievements-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of the achievements of the team.</p></li>
+<li><p><strong>Create Achievement</strong>: Opens a new window to the achievement record with populated the Team field value where achievement details can be entered.</p></li>
+<li><p><strong>Delete Achievement</strong>: Deletes the achievement (inline button).</p></li>
+</ul>
+</section>
+<section id="contracts-and-payments-buttons">
+<h3>Contracts and Payments Buttons<a class="headerlink" href="#contracts-and-payments-buttons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>View Tab</strong>: View the list of contracts associated with the team.</p></li>
+<li><p><strong>Create Contract</strong>: Opens a new window to the contract record with populated the Team field value where contract details can be entered.</p></li>
+<li><p><strong>Delete Contract</strong>: Deletes the contract (inline button).</p></li>
+</ul>
+</section>
+</section>
+<section id="required-roles">
+<h2>Required Roles<a class="headerlink" href="#required-roles" title="Link to this heading">#</a></h2>
+<p>Please refer to the <a class="reference internal" href="role_form.html#system-roles"><span class="std std-ref">Role Hierarchy section</span></a> for details about role hierarchy. Users with higher roles can perform actions that require lower roles.</p>
+<ul class="simple">
+<li><p><strong>Retrieve Record</strong>:</p>
 <ul>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">internal_user</span></code> role, if status is <strong>Active</strong> or <strong>Archived</strong> and team is associated to that user directly through <strong>Player</strong> or <strong>Staff</strong> tabs.</p></li>
 <li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Add Player to Team</strong>: Allows you to add a new player to the team.</p>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>:</p>
 <ul>
-<li><p><strong>How</strong>: This action will open a pop-up window to add a player.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> role or higher, if status is <strong>Pending</strong>, <strong>Active</strong>, or <strong>Inactive</strong>.</p></li>
+<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_admin</span></code> role or higher, if status is <strong>Archived</strong>.</p></li>
 </ul>
 </li>
-<li><p><strong>Remove Player from Team</strong>: Allows you to remove a player from the team.</p>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_admin</span></code> role or higher.</p></li>
+<li><p><em>Players Tab</em>:</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> roles or higher.</p></li>
 </ul>
 </li>
-</ul>
-</section>
-<section id="injuries-actions">
-<h3>Injuries Actions<a class="headerlink" href="#injuries-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Injuries</strong>: Allows you to view injury details for players on the team.</p>
+<li><p><em>Injuries tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">player_read</span></code> role or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">player_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Does not exist.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Does not exist.</p></li>
 </ul>
 </li>
-</ul>
-</section>
-<section id="staff-actions">
-<h3>Staff Actions<a class="headerlink" href="#staff-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Staff</strong>: Allows you to see the list of staff members assigned to the team.</p>
+<li><p><em>Staff Tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team</span></code>, <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Add Staff to Team</strong>: Allows you to add a new staff member to the team.</p>
+<li><p><em>Schedule Tab</em>:</p>
 <ul>
-<li><p><strong>How</strong>: This action will open a pop-up window to add a staff member.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> and <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">event_read</span></code> roles or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">event</span></code> roles or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">event</span></code> roles or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Remove Staff from Team</strong>: Allows you to remove a staff member from the team.</p>
+<li><p><em>Feedback Tab</em>:</p>
 <ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team</span></code> and <code class="docutils literal notranslate"><span class="pre">employee_read</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> roles or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance</span></code> roles or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> roles or higher.</p></li>
 </ul>
 </li>
-</ul>
-</section>
-<section id="schedule-actions">
-<h3>Schedule Actions<a class="headerlink" href="#schedule-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Schedule</strong>: Allows you to view the team’s schedule and events.</p>
+<li><p><em>Achievements Tab</em>:</p>
 <ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">event_read</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> roles or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> roles or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> roles or higher.</p></li>
 </ul>
 </li>
-<li><p><strong>Add Team to Schedule</strong>: Allows you to schedule the team for an (upcoming) series of events or matches.</p>
+<li><p><em>Contracts and Payments tab</em>:</p>
 <ul>
-<li><p><strong>How</strong>: This action will open a pop-up window to add a schedule.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">event</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Remove Team from Schedule</strong>: Allows you to remove the team from a series of events or matches.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">event</span></code> roles or higher.</p></li>
+<li><p><strong>Retrieve Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> role or higher.</p></li>
+<li><p><strong>Create Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">financial</span></code> role or higher.</p></li>
+<li><p><strong>Update Record</strong>: Does not exist.</p></li>
+<li><p><strong>Delete Record</strong>: Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> role or higher.</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="feedback-actions">
-<h3>Feedback Actions<a class="headerlink" href="#feedback-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Feedback</strong>: Allows you to view feedback given for the team’s performance.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Give Feedback</strong>: Allows you to provide feedback for the team’s performance in a specific event.</p>
-<ul>
-<li><p><strong>How</strong>: This option opens a new window to the feedback record with populated the Team field value where you can enter the feedback details.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Feedback</strong>: Allows you to delete a feedback from the system associated with the team.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> roles or higher.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="achievements-actions">
-<h3>Achievements Actions<a class="headerlink" href="#achievements-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Achievements</strong>: Allows you to see the team’s achievements and awards.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance_read</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Add Achievement</strong>: Allows you to add a new achievement for the team.</p>
-<ul>
-<li><p><strong>How</strong>: This option opens a new window to the achievement record with populated the Team field value where you can enter the achievement details.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Achievement</strong>: Allows you to delete an achievement from the system associated with the team.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">team_read</span></code> and <code class="docutils literal notranslate"><span class="pre">performance_admin</span></code> roles or higher.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="contracts-actions">
-<h3>Contracts Actions<a class="headerlink" href="#contracts-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>View Contract and Payment</strong>: Allows you to view the team’s contract and payment details.</p>
-<ul>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">user_read_basic</span></code>, <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, and <code class="docutils literal notranslate"><span class="pre">financial_read</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Create Contract for Team</strong>: Allows you to create a new contract for the team.</p>
-<ul>
-<li><p><strong>How</strong>: This option opens a new window to the contract record with populated the Team field value where you can enter the contract details.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">user_read_basic</span></code>, <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, and <code class="docutils literal notranslate"><span class="pre">financial</span></code> roles or higher.</p></li>
-</ul>
-</li>
-<li><p><strong>Delete Contract</strong>: Allows you to remove an existing contract from the team.</p>
-<ul>
-<li><p><strong>How</strong>: This action is available inline next to each record.</p></li>
-<li><p>Requires <code class="docutils literal notranslate"><span class="pre">user_read_basic</span></code>, <code class="docutils literal notranslate"><span class="pre">team_read</span></code>, and <code class="docutils literal notranslate"><span class="pre">financial_admin</span></code> roles or higher.</p></li>
-</ul>
-</li>
-</ul>
-</section>
 </section>
 <section id="other-important-information">
 <h2>Other Important Information<a class="headerlink" href="#other-important-information" title="Link to this heading">#</a></h2>
@@ -660,11 +628,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="feedback_form.html"
+       href="schedule_form.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Feedback Form and Actions</p>
+        <p class="prev-next-title">Schedule Form and Actions (TBD)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -688,17 +656,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields-functions">Fields &amp; Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-record-lifecycle">Team Record Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-lists">Related Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-required-roles">Actions &amp; Required Roles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-actions">Main Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-actions">Players Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-actions">Injuries Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-actions">Staff Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-actions">Schedule Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-actions">Feedback Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-actions">Achievements Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-actions">Contracts Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-buttons">Action Buttons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-buttons">Main Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#players-buttons">Players Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injuries-buttons">Injuries Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#staff-buttons">Staff Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-buttons">Schedule Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-buttons">Feedback Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#achievements-buttons">Achievements Buttons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contracts-and-payments-buttons">Contracts and Payments Buttons</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-roles">Required Roles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-important-information">Other Important Information</a></li>
 </ul>
   </nav></div>
