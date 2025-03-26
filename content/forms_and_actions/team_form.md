@@ -31,8 +31,6 @@ Steps to locate this page:
 
 [IMAGE]
 
-(team-record-lifecycle)=
-
 ## Team Record Lifecycle
 
 The team record progresses through the following stages, with specific edit permissions based on user roles:
@@ -40,7 +38,6 @@ The team record progresses through the following stages, with specific edit perm
 - **Pending**: The team record is in the initial stage, awaiting review or approval.
 - **Active**: The team record is fully operational and in use.
 - **Archived**: The team record is no longer active but retained for historical reference.
-    - Requires `player_admin` or `admin` role to edit the record after the status is saved to this value.
 - **Inactive**: The team record is inactive and not in use.
 
 ## Related Lists
@@ -71,95 +68,101 @@ Tabs that point to other sections related to the team:
 - **[Sponsors](./sponsor_form.md)**: View information about sponsors supporting the team.
   [IMAGE]
 
-## Actions & Required Roles
+## Action Buttons
 
-```{admonition} Explanation of Roles
-:class: tip, dropdown
+### Main Buttons
+
+- **Save Team**: Creates or updates the team record.
+- **Delete Team**: Deletes the team record.
+  - Available only on existing records.
+
+### Players Buttons
+
+- **View Tab**: View the list of players assigned to the team.
+- **Add Player to Team**: Shows a pop-up window to add a player to the team.
+- **Remove Player from Team**: Removes a players from the team (inline button).
+
+### Injuries Buttons
+
+- **View Tab**: View the list of injury details for players on the team.
+
+### Staff Buttons
+
+- **View Tab**: View the list of staff members assigned to the team.
+- **Add Staff to Team**: Shows a pop-up window to add a staff member to the team.
+- **Remove Staff from Team**: Removes a staff member from the team (inline button).
+
+### Schedule Buttons
+
+- **View Tab**: View the list of events assigned to the team.
+- **Add Team to Schedule**: Shows a pop-up window to schedule the team for an (upcoming) series of events or matches.
+- **Remove Team from Schedule**: Removes the team from a series of events or matches (inline button).
+
+### Feedback Buttons
+
+- **View Tab**: View the list of feedback given for the team’s performance.
+- **Create Feedback**: Opens a new window to the feedback record to provide feedback for the team’s performance in a specific event with populated the Team field value where feedback details can be entered.
+- **Delete Feedback**: Deletes the feedback (inline button).
+
+### Achievements Buttons
+
+- **View Tab**: View the list of the achievements of the team.
+- **Create Achievement**: Opens a new window to the achievement record with populated the Team field value where achievement details can be entered.
+- **Delete Achievement**: Deletes the achievement (inline button).
+
+### Contracts and Payments Buttons
+
+- **View Tab**: View the list of contracts associated with the team.
+- **Create Contract**: Opens a new window to the contract record with populated the Team field value where contract details can be entered.
+- **Delete Contract**: Deletes the contract (inline button).
+
+## Required Roles
 
 Please refer to the [Role Hierarchy section](system-roles) for details about role hierarchy. Users with higher roles can perform actions that require lower roles.
-```
 
-### Main Actions
-
-- **View Team**: Allows you to view the team's details.
-    - Requires `team_read` role or higher.
-- **Save Team (New Record)**: Allows you to create a new team record.
-    - Requires `team` role or higher.
-- **Save Team (Existing Record)**: Allows you to modify the details of an existing team record.
-    - Requires `team` role or higher.
-- **Delete Team**: Allows you to delete a team.
-    - Requires `team_admin` role or higher.
-
-### Players Actions
-
-- **View Players**: Allows you to view the list of players associated with the team.
-    - Requires `team_read`, `player_read` roles or higher.
-- **Add Player to Team**: Allows you to add a new player to the team.
-    - **How**: This action will open a pop-up window to add a player.
-    - Requires `team`, `player_read` roles or higher.
-- **Remove Player from Team**: Allows you to remove a player from the team.
-    - **How**: This action is available inline next to each record.
-    - Requires `team`, `player_read` roles or higher.
-
-### Injuries Actions
-
-- **View Injuries**: Allows you to view injury details for players on the team.
-    - Requires `player_read` role or higher.
-
-### Staff Actions
-
-- **View Staff**: Allows you to see the list of staff members assigned to the team.
-    - Requires `team_read` and `employee_read` roles or higher.
-- **Add Staff to Team**: Allows you to add a new staff member to the team.
-    - **How**: This action will open a pop-up window to add a staff member.
-    - Requires `team` and `employee_read` roles or higher.
-- **Remove Staff from Team**: Allows you to remove a staff member from the team.
-    - **How**: This action is available inline next to each record.
-    - Requires `team` and `employee_read` roles or higher.
-
-### Schedule Actions
-
-- **View Schedule**: Allows you to view the team’s schedule and events.
-    - Requires `team_read` and `event_read` roles or higher.
-- **Add Team to Schedule**: Allows you to schedule the team for an (upcoming) series of events or matches.
-    - **How**: This action will open a pop-up window to add a schedule.
-    - Requires `team_read` and `event` roles or higher.
-- **Remove Team from Schedule**: Allows you to remove the team from a series of events or matches.
-    - **How**: This action is available inline next to each record.
-    - Requires `team_read` and `event` roles or higher.
-
-### Feedback Actions
-
-- **View Feedback**: Allows you to view feedback given for the team’s performance.
-    - Requires `team_read` and `performance_read` roles or higher.
-- **Give Feedback**: Allows you to provide feedback for the team’s performance in a specific event.
-    - **How**: This option opens a new window to the feedback record with populated the Team field value where you can enter the feedback details.
-    - Requires `team_read` and `performance` roles or higher.
-- **Delete Feedback**: Allows you to delete a feedback from the system associated with the team.
-    - **How**: This action is available inline next to each record.
-    - Requires `team_read` and `performance_admin` roles or higher.
-
-### Achievements Actions
-
-- **View Achievements**: Allows you to see the team’s achievements and awards.
-    - Requires `team_read` and `performance_read` roles or higher.
-- **Add Achievement**: Allows you to add a new achievement for the team.
-    - **How**: This option opens a new window to the achievement record with populated the Team field value where you can enter the achievement details.
-    - Requires `team_read` and `performance` roles or higher.
-- **Delete Achievement**: Allows you to delete an achievement from the system associated with the team.
-    - **How**: This action is available inline next to each record.
-    - Requires `team_read` and `performance_admin` roles or higher.
-
-### Contracts Actions
-
-- **View Contract and Payment**: Allows you to view the team’s contract and payment details.
-    - Requires `user_read_basic`, `team_read`, and `financial_read` roles or higher.
-- **Create Contract for Team**: Allows you to create a new contract for the team.
-    - **How**: This option opens a new window to the contract record with populated the Team field value where you can enter the contract details.
-    - Requires `user_read_basic`, `team_read`, and `financial` roles or higher.
-- **Delete Contract**: Allows you to remove an existing contract from the team.
-    - **How**: This action is available inline next to each record.
-    - Requires `user_read_basic`, `team_read`, and `financial_admin` roles or higher.
+- **Retrieve Record**:
+  - Requires `internal_user` role, if status is **Active** or **Archived** and team is associated to that user directly through **Player** or **Staff** tabs.
+  - Requires `team_read`, `player_read` roles or higher.
+- **Create Record**: Requires `team` role or higher.
+- **Update Record**:
+  - Requires `team` role or higher, if status is **Pending**, **Active**, or **Inactive**.
+  - Requires `team_admin` role or higher, if status is **Archived**.
+- **Delete Record**: Requires `team_admin` role or higher.
+- _Players Tab_:
+  - **Retrieve Record**: Requires `team_read`, `player_read` roles or higher.
+  - **Create Record**: Requires `team`, `player_read` roles or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team`, `player_read` roles or higher.
+- _Injuries tab_:
+  - **Retrieve Record**: Requires `team`, `player_read` role or higher.
+  - **Create Record**: Does not exist.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Does not exist.
+- _Staff Tab_:
+  - **Retrieve Record**: Requires `team_read`, `employee_read` roles or higher.
+  - **Create Record**: Requires `team`, `employee_read` roles or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team`, `employee_read` roles or higher.
+- _Schedule Tab_:
+  - **Retrieve Record**: Requires `team_read`, `event_read` roles or higher.
+  - **Create Record**: Requires `team_read`, `event` roles or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team_read`, `event` roles or higher.
+- _Feedback Tab_:
+  - **Retrieve Record**: Requires `team_read`, `performance_read` roles or higher.
+  - **Create Record**: Requires `team_read`, `performance` roles or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team_read`, `performance_admin` roles or higher.
+- _Achievements Tab_:
+  - **Retrieve Record**: Requires `team_read`, `performance_read` roles or higher.
+  - **Create Record**: Requires `team_read`, `performance_read` roles or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team_read`, `performance_admin` roles or higher.
+- _Contracts and Payments tab_:
+  - **Retrieve Record**: Requires `team_read`, `financial_read` role or higher.
+  - **Create Record**: Requires `team_read`, `financial` role or higher.
+  - **Update Record**: Does not exist.
+  - **Delete Record**: Requires `team_read`, `financial_admin` role or higher.
 
 ## Other Important Information
 

@@ -37,16 +37,16 @@ The achievement record progresses through the following stages:
 
 ## Action Buttons
 
-- **Save Achievement**: Creates or updates an achievement record.
-- **Request Approval**: Marks an achievement ready to be approved.
+- **Save Achievement**: Creates or updates the achievement record.
+- **Request Approval**: Marks the achievement as ready to be approved.
     - Available only if the achievement status is **Draft**.
-- **Approve Achievement**: Marks an achievement record approved.
+- **Approve Achievement**: Marks the achievement record as approved.
     - Available only if the achievement status is **Pending Approval**.
-- **Reject Achievement**: Marks an achievement record rejected.
+- **Reject Achievement**: Marks the achievement record as rejected.
     - Available only if the achievement status is **Pending Approval**.
-- **Cancel Achievement**: Marks an achievement record as cancelled.
+- **Cancel Achievement**: Marks the achievement record as cancelled.
     - Available only on existing records, not in **Cancelled** status.
-- **Delete Achievement**: Deletes an achievement record.
+- **Delete Achievement**: Deletes the achievement record.
     - Available only on existing records.
 
 ## Required Roles

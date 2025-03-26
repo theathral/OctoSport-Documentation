@@ -40,14 +40,14 @@ The feedback record progresses through the following stages:
 
 ## Action Buttons
 
-- **Save Feedback**: Creates or updates a feedback record.
-- **Publish Feedback**: Marks a feedback record as published.
+- **Save Feedback**: Creates or updates the feedback record.
+- **Publish Feedback**: Marks the feedback record as published.
     - Available only if the feedback status is **Draft**.
-- **Hidden Publish Feedback**: Marks a feedback record as published while keeping it hidden from the associated users
+- **Hidden Publish Feedback**: Marks the feedback record as published while keeping it hidden from the associated users
     - Available only if the feedback status is **Draft**.
-- **Cancel Feedback**: Marks a feedback record as cancelled.
+- **Cancel Feedback**: Marks the feedback record as cancelled.
     - Available only on existing records, not in **Cancelled** status.
-- **Delete Feedback**: Deletes a feedback record.
+- **Delete Feedback**: Deletes the feedback record.
     - Available only on existing records.
 
 ## Required Roles

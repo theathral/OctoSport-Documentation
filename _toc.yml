@@ -33,9 +33,9 @@ chapters:
 
 #      - file: content/forms_and_actions/employee_form
 
-      - file: content/forms_and_actions/team_form
+      - file: content/forms_and_actions/team_form # Done
 
-#      - file: content/forms_and_actions/schedule_form
+      - file: content/forms_and_actions/schedule_form
 #      - file: content/forms_and_actions/event_form
 #      - file: content/forms_and_actions/result_form
 #      - file: content/forms_and_actions/attendance_form
@@ -44,6 +44,6 @@ chapters:
       - file: content/forms_and_actions/feedback_form # Done
       - file: content/forms_and_actions/achievement_form # Done
 
-      - file: content/forms_and_actions/sponsor_form
-      - file: content/forms_and_actions/contract_form
+      - file: content/forms_and_actions/sponsor_form # Done
+      - file: content/forms_and_actions/contract_form # Done
       - file: content/forms_and_actions/payment_form # Done

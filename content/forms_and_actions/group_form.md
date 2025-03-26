@@ -41,8 +41,8 @@ Tabs that point to other sections related to the group:
 
 ### Main Buttons
 
-- **Save Group**: Creates or updates a group record.
-- **Delete Group**: Deletes an existing group.
+- **Save Group**: Creates or updates the group record.
+- **Delete Group**: Deletes the existing group.
     - Available only on existing records.
 
 ### Users Tab Buttons

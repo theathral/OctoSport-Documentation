@@ -40,8 +40,8 @@ The injury record progresses through the following stages:
 
 ## Action Buttons
 
-- **Save Injury**: Creates or updates an injury record.
-- **Delete Injury**: Deletes an injury record.
+- **Save Injury**: Creates or updates the injury record.
+- **Delete Injury**: Deletes the injury record.
     - Available only on existing records.
 
 ## Required Roles
@@ -52,7 +52,7 @@ Please refer to the [Role Hierarchy section](system-roles) for details about rol
 - **Create Record**: Requires `player_read` + `doctor` roles or `player` role or higher.
 - **Update Record**:
     - Requires `internal_user` role, if injury is associated to that user directly through **Player** field.
-    - Requires `player_read` + `doctor` roles or `player` role or higher, if status is **In Recovery** or **Setback In Recovery**
+    - Requires `player_read` + `doctor` roles or `player` role or higher, if status is **In Recovery** or **Setback In Recovery**.
     - Requires `player_admin` role or higher, if status is **Fully Recovered**, **Permanent Disability**, or **Cancelled**.
 - **Delete Record**: Requires `player_admin` role or higher.
 
